@@ -9,9 +9,12 @@ class App extends Component {
     super();
     this.state = {
       suggestedTime: [], 
+      isSunset: true,
+      date: '',
+      duration: '',
     }
   }
-  componentDidMount() {
+  onHandleSubmit = () => {
     axios({
       url: `https://api.sunrise-sunset.org/json`,
       method: `GET`,
@@ -19,7 +22,9 @@ class App extends Component {
       params: {
         lat: 43.6532,
         lng: -79.3832,
-        date: 'tomorrow',
+        date: '',
+        sunrise: '',
+        sunset: '',
       }
     })
       .then((response) => {
