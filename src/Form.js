@@ -1,29 +1,39 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Form extends Component {
-    constructor() {
-        super();
-        this.state = {
 
-        }
-    }
 
-    render() {
-        return (
-            
-
-            <form action="">
+        function Form (props){    
+            return (
+            <form action="" onSubmit={props.handleSubmit}>
                 <h3>when would you like to run?</h3>
 
-                <input type="radio" id="beforeSunrise" name="sunrise" value="beforeSunrise" />
+                <input 
+                    type="radio" 
+                    id="beforeSunrise" 
+                    name="sunrise" value={props.isSunset}
+                    onChange={props.handleSunset}/>
                 <label htmlFor="beforeSunrise">before sunrise</label>
 
-                <input type="radio" id="beforeSunset" name="sunrise" value="beforeSunset" />
+                <input 
+                    type="radio" 
+                    id="beforeSunset" 
+                    name="sunrise" value={props.isSunset}
+                    onChange={props.handleSunset}
+                    />
                 <label htmlFor="beforeSunset">before sunset</label>
-{/* consider error handling - min and max */}
-                <input type="date" name="date" id="date" />
+
+                {/* consider error handling - min and max */}
+                <input 
+                    type="date" 
+                    name="date" 
+                    id="date" 
+                    onChange={props.handleDate}
+                    value={props.date}
+                    />
                 <label htmlFor="date"></label>
-                <select>
+
+                <select 
+                    onChange={props.handleDuration} value={props.duration}>
                     <option value="">run duration</option>
                     <option value="">15 mins</option>
                     <option value="">30 mins</option>
@@ -32,13 +42,9 @@ class Form extends Component {
                 </select>
                 <div>
                     <button type="submit">twilight me</button>
-                    {/* fun comment */}
                 </div>
             </form>
-        )
+        );
     }
-}
-
-
 
 export default Form;
