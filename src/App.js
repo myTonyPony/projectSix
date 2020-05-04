@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
+// import components
+import Form from './Form.js'
 
 class App extends Component {
   constructor() {
@@ -32,6 +34,7 @@ class App extends Component {
     return (
       <main>
         <h1>Fun Run</h1>
+        <Form />
       </main>
     )
   }
