@@ -14,7 +14,7 @@ class App extends Component {
       duration: '',
     }
   }
-  onHandleSubmit = () => {
+  componentDidMount(){
     axios({
       url: `https://api.sunrise-sunset.org/json`,
       method: `GET`,
