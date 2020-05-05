@@ -4,20 +4,27 @@ import axios from 'axios'
 // import components
 import Form from './Form';
 
+
+// First, we get the date for the user of when they would like to run.
+// Then, we ask if they'd like to hit the sunrise or the sunset. 
+// From there we save the values for the time that either the sunrise ends or sunset ends, depending on the user selection. 
+// Then, we ask them for the desired duration of their run and save that value. 
+// Then, we subtract that duration from either the sunrise or sunset time (depending on what they chose) to figure out when they should leave to go on their run.
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       suggestedTime: [], 
-      isSunset: true,
+      isSunrise: true,
       date: '',
       duration: '',
     }
   }
 
-  handleSunset = (event) => {
+  handleSunrise = (event) => {
     this.setState({
-      isSunset: event.target.value,
+      isSunrise: event.target.value,
     })
     console.log(event.target.value)
   }
@@ -64,7 +71,7 @@ class App extends Component {
         <h1>Fun Run</h1>
         <Form 
           handleSubmit={this.handleSubmit}
-          handleSunset={this.handleSunset}
+          handleSunrise={this.handleSunrise}
           handleDate={this.handleDate}
           date={this.state.date}
           handleDuration={this.handleDuration}
