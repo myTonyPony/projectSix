@@ -8,6 +8,7 @@ import React from 'react'
                 <h3>when would you like to run?</h3>
 
                 <input
+                  type="date"
                   name="date"
                   id="date"
                   onChange={props.handleDate}
