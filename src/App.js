@@ -55,7 +55,7 @@ class App extends Component {
       params: {
         lat: 43.6532,
         lng: -79.3832,
-        date: '',
+        date: this.state.date,
 
       }
     })
