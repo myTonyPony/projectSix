@@ -16,7 +16,7 @@ class App extends Component {
     super();
     this.state = {
       suggestedTime: [], 
-      isSunrise: true,
+      beforeSunrise: true,
       date: '',
       duration: '',
     }
@@ -24,7 +24,7 @@ class App extends Component {
 
   handleSunrise = (event) => {
     this.setState({
-      isSunrise: event.target.value,
+      beforeSunrise: event.target.value,
     })
     console.log(event.target.value)
   }
@@ -34,6 +34,7 @@ class App extends Component {
       date: event.target.value,
     })
     console.log(event.target.value)
+    
   }
 
   handleDuration = (event) => {
@@ -54,13 +55,18 @@ class App extends Component {
       params: {
         lat: 43.6532,
         lng: -79.3832,
+        date: '',
+
       }
     })
       .then((response) => {
-        console.log(response.data.results.sunrise)
-        console.log(response.data.results.sunset)
+        console.log(response);
+        // console.log(response.data.results.sunrise)
+        // console.log(response.data.results.sunset)
+        console.log(this.state.date);
         this.setState({
           suggestedTime: response.data.results
+
         })
       });
   }
