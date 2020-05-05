@@ -19,6 +19,7 @@ class App extends Component {
       beforeSunrise: true,
       date: '',
       duration: '',
+      userTime:'',
     }
   }
 
@@ -55,15 +56,13 @@ class App extends Component {
       params: {
         lat: 43.6532,
         lng: -79.3832,
-        date: '',
-
+        date: this.state.date,
+        
       }
     })
       .then((response) => {
         console.log(response);
-        // console.log(response.data.results.sunrise)
-        // console.log(response.data.results.sunset)
-        console.log(this.state.date);
+        
         this.setState({
           suggestedTime: response.data.results
 
@@ -75,6 +74,7 @@ class App extends Component {
     return (
       <main>
         <h1>Fun Run</h1>
+
         <Form 
           handleSubmit={this.handleSubmit}
           handleSunrise={this.handleSunrise}

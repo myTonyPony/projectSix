@@ -13,8 +13,10 @@ import React from 'react'
                   id="date"
                   onChange={props.handleDate}
                   value={props.date}
+                  
                 />
                 <label htmlFor="date"></label>
+
                 <input
                   type="radio"
                   id="beforeSunrise"
