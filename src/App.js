@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 // import components
-import Form from './Form.js'
+import Form from './Form';
 
 class App extends Component {
   constructor() {
@@ -14,24 +14,29 @@ class App extends Component {
       duration: '',
     }
   }
-  
+
   handleSunset = (event) => {
     this.setState({
       isSunset: event.target.value,
     })
+    console.log(event.target.value)
   }
 
   handleDate = (event) => {
     this.setState({
       date: event.target.value,
     })
+    console.log(event.target.value)
   }
 
   handleDuration = (event) => {
     this.setState({
       duration: event.target.value,
     })
+    console.log(event.target.value)
   }
+
+  
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -60,7 +65,6 @@ class App extends Component {
         <Form 
           handleSubmit={this.handleSubmit}
           handleSunset={this.handleSunset}
-          sunset={this.state.isSunset}
           handleDate={this.handleDate}
           date={this.state.date}
           handleDuration={this.handleDuration}
