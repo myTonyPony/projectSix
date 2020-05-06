@@ -43,7 +43,8 @@ import React from 'react'
                   <option value="60">60 mins</option>
                 </select>
                 <div>
-                  <button type="submit">twilight me</button>
+                  <button type="submit">twilight me</button> 
+                  {/* change to input */}
                 </div>
               </form>
             );
