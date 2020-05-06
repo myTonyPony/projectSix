@@ -76,28 +76,11 @@ class App extends Component {
       // // set variables for Sunset and Sunrise times
       const morningRun = response.data.results.sunrise
       const nightRun = response.data.results.sunset
-      console.log('morning', morningRun);
-      console.log('night', nightRun);
-      // console.log(this.state.beforeSunrise);
-      
-      // // use if else statement to determine what the usertime should be set to morningRun - this.state.duration or morningRun - this.state.duration
-      // this.setState ({
-      //   userTime: this.state.beforeSunrise ? nightRun : morningRun,
-      // })
-      // console.log(this.state.userTime);
-      
-      // // ** error no matter what you pick for the beforeSunrise it is always true 
 
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
 
       console.log(userRun);
       console.log(this.state.beforeSunrise, 'this is current time state')
-
-      // if (this.state.beforeSunrise) {
-      //   this.setState({userTime: morningRun})
-      // } else {
-      //   this.setState({userTime: nightRun})
-      // }
 
       console.log(this.state.beforeSunrise);
 
@@ -105,7 +88,6 @@ class App extends Component {
       this.setState({
         userTime: userRun,
       })
-      // console.log(this.state.userTime);
     }
   
       
