@@ -17,7 +17,7 @@ class App extends Component {
     super();
     this.state = {
       suggestedTime: [], 
-      beforeSunrise: !true,
+      beforeSunrise: true,
       date: '',
       duration: 0,
       userTime:'',
@@ -25,6 +25,9 @@ class App extends Component {
   }
 
   handleSunrise = (event) => {
+    // convert form value string: 'false' into boolean of false
+
+  
     this.setState({
       beforeSunrise: event.target.value,
     })
@@ -86,12 +89,17 @@ class App extends Component {
       // // ** error no matter what you pick for the beforeSunrise it is always true 
 
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
+      // if (this.state.beforeSunrise) {
+      //   this.setState({userTime: morningRun})
+      // } else {
+      //   this.setState({userTime: nightRun})
+      // }
 
-      console.log(userRun);
+      console.log(this.state.beforeSunrise);
 
-      // this.setState({
-      //   userTime: userRun,
-      // })
+      this.setState({
+        userTime: userRun,
+      })
       // console.log(this.state.userTime);
     }
         
