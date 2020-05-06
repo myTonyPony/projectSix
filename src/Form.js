@@ -18,8 +18,8 @@ import React from 'react'
                 <input
                   type="radio"
                   id="beforeSunrise"
-                  name="sunrise"
-                  value={true}
+                  name="beforeSunrise"
+                  value='true'
                   onChange={props.handleSunrise}
                 />
                 <label htmlFor="beforeSunrise">before sunrise</label>
@@ -27,8 +27,8 @@ import React from 'react'
                 <input
                   type="radio"
                   id="beforeSunset"
-                  name="sunrise"
-                  value={false}
+                  name="beforeSunrise"
+                  value='false'
                   onChange={props.handleSunrise}
                 />
                 <label htmlFor="beforeSunset">before sunset</label>
@@ -48,6 +48,5 @@ import React from 'react'
               </form>
             );
     }
-    
 
 export default Form;
