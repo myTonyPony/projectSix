@@ -17,7 +17,9 @@ class App extends Component {
     super();
     this.state = {
       suggestedTime: [], 
+
       beforeSunrise: null,
+
       date: '',
       duration: 0,
       userTime:'',
@@ -87,12 +89,22 @@ class App extends Component {
       // // ** error no matter what you pick for the beforeSunrise it is always true 
 
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
+
       console.log(userRun);
       console.log(this.state.beforeSunrise, 'this is current time state')
 
-      // this.setState({
-      //   userTime: userRun,
-      // })
+      // if (this.state.beforeSunrise) {
+      //   this.setState({userTime: morningRun})
+      // } else {
+      //   this.setState({userTime: nightRun})
+      // }
+
+      console.log(this.state.beforeSunrise);
+
+
+      this.setState({
+        userTime: userRun,
+      })
       // console.log(this.state.userTime);
     }
   
