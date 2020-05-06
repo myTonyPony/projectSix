@@ -79,13 +79,14 @@ class App extends Component {
       const runDuration = parseInt(this.state.duration)
 
       console.log(response.data.results)
-
+      console.log(runDuration)
 
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
-      const runTime = (userRun - runDuration)
+      // const runTime = (userRun - runDuration)
 
-      const runMorning = new Date(`${this.state.date}T16:00:00.000Z`);
-      console.log(new Date(runMorning - (15*1000*60)))
+      const runningTime = new Date(`${this.state.date}(${userRun} - ${runDuration})`);
+      console.log(new Date(runningTime))
+      
       console.log(this.state.date + userRun)
 
       // console.log(userRun);
@@ -95,7 +96,7 @@ class App extends Component {
       // console.log(nightRun)
 
       this.setState({
-        userTime: runTime,
+        userTime: runningTime,
       })
       console.log(this.state.userTime)
     }

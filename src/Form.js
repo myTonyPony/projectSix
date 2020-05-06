@@ -37,10 +37,10 @@ import React from 'react'
 
                 <select onChange={props.handleDuration} value={props.duration}>
                   <option value="">run duration</option>
-                  <option value="15">15 mins</option>
-                  <option value="30">30 mins</option>
-                  <option value="45">45 mins</option>
-                  <option value="60">60 mins</option>
+                  <option value="900000">15 mins</option>
+                  <option value="1800000">30 mins</option>
+                  <option value="2700000">45 mins</option>
+                  <option value="3600000">60 mins</option>
                 </select>
                 <div>
                   <button type="submit">twilight me</button> 
