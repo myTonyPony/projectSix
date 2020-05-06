@@ -3,6 +3,7 @@ import axios from 'axios'
 
 // import components
 import Form from './Form';
+import UserSelection from './UserSelection'
 
 
 // First, we get the date for the user of when they would like to run.
@@ -16,9 +17,9 @@ class App extends Component {
     super();
     this.state = {
       suggestedTime: [], 
-      beforeSunrise: true,
+      beforeSunrise: !true,
       date: '',
-      duration: '',
+      duration: 0,
       userTime:'',
     }
   }
@@ -45,7 +46,6 @@ class App extends Component {
     console.log(event.target.value)
   }
 
-  
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -62,14 +62,41 @@ class App extends Component {
     })
       .then((response) => {
         console.log(response);
-        
         this.setState({
           suggestedTime: response.data.results
-
-        })
+        },() => this.createRun(response) )
+        // anon function above delays createRun until api is finished
       });
   }
 
+    createRun = (response) => {
+      // // set variables for Sunset and Sunrise times
+      const morningRun = response.data.results.sunrise
+      const nightRun = response.data.results.sunset
+      console.log('morning', morningRun);
+      console.log('night', nightRun);
+      // console.log(this.state.beforeSunrise);
+      
+      // // use if else statement to determine what the usertime should be set to morningRun - this.state.duration or morningRun - this.state.duration
+      // this.setState ({
+      //   userTime: this.state.beforeSunrise ? nightRun : morningRun,
+      // })
+      // console.log(this.state.userTime);
+      
+      // // ** error no matter what you pick for the beforeSunrise it is always true 
+
+      const userRun = this.state.beforeSunrise ? morningRun : nightRun
+
+      console.log(userRun);
+
+      // this.setState({
+      //   userTime: userRun,
+      // })
+      // console.log(this.state.userTime);
+    }
+        
+      
+    
   render() {
     return (
       <main>
@@ -82,6 +109,10 @@ class App extends Component {
           date={this.state.date}
           handleDuration={this.handleDuration}
           duration={this.state.duration}
+          />
+
+          <UserSelection
+          userInput={this.userInput}
           />
       </main>
     )
