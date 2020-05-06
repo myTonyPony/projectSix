@@ -17,9 +17,7 @@ class App extends Component {
     super();
     this.state = {
       suggestedTime: [], 
-
       beforeSunrise: null,
-
       date: '',
       duration: 0,
       userTime:'',
@@ -74,20 +72,22 @@ class App extends Component {
 
     createRun = (response) => {
       // // set variables for Sunset and Sunrise times
-      const morningRun = response.data.results.sunrise
-      const nightRun = response.data.results.sunset
-
+      const morningRun = parseInt(response.data.results.sunrise)
+      const nightRun = parseInt(response.data.results.sunset)
+      const runDuration = parseInt(this.state.duration)
+      
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
-
+      const runTime = (userRun - runDuration)
       console.log(userRun);
       console.log(this.state.beforeSunrise, 'this is current time state')
 
       console.log(this.state.beforeSunrise);
-
+      console.log(nightRun)
 
       this.setState({
-        userTime: userRun,
+        userTime: runTime,
       })
+      console.log(this.state.userTime)
     }
   
       
