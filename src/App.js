@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Moment from 'react-moment'
+import 'moment-timezone'
 
 // import components
 import Form from './Form';
@@ -29,14 +31,14 @@ class App extends Component {
     this.setState({
       beforeSunrise
     })
-    console.log(event.target.checked)
+    // console.log(event.target.checked)
   }
 
   handleDate = (event) => {
     this.setState({
       date: event.target.value,
     })
-    console.log(event.target.value)
+    // console.log(event.target.value)
     
   }
 
@@ -44,7 +46,7 @@ class App extends Component {
     this.setState({
       duration: event.target.value,
     })
-    console.log(event.target.value)
+    // console.log(event.target.value)
   }
 
 
@@ -62,7 +64,7 @@ class App extends Component {
       }
     })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({
           suggestedTime: response.data.results
         },() => this.createRun(response) )
@@ -72,17 +74,25 @@ class App extends Component {
 
     createRun = (response) => {
       // // set variables for Sunset and Sunrise times
-      const morningRun = parseInt(response.data.results.sunrise)
-      const nightRun = parseInt(response.data.results.sunset)
+      const morningRun = response.data.results.sunrise
+      const nightRun = response.data.results.sunset
       const runDuration = parseInt(this.state.duration)
-      
+
+      console.log(response.data.results)
+
+
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
       const runTime = (userRun - runDuration)
-      console.log(userRun);
-      console.log(this.state.beforeSunrise, 'this is current time state')
 
-      console.log(this.state.beforeSunrise);
-      console.log(nightRun)
+      const runMorning = new Date(`${this.state.date}T16:00:00.000Z`);
+      console.log(new Date(runMorning - (15*1000*60)))
+      console.log(this.state.date + userRun)
+
+      // console.log(userRun);
+      // console.log(this.state.beforeSunrise, 'this is current time state')
+
+      // console.log(this.state.beforeSunrise);
+      // console.log(nightRun)
 
       this.setState({
         userTime: runTime,
