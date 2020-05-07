@@ -74,10 +74,11 @@ class App extends Component {
 
     createRun = (response) => {
       // // set variables for Sunset and Sunrise times
-      const morningRun = response.data.results.sunrise
+      const morningRun = new Date(response.data.results.sunrise)
       const nightRun = response.data.results.sunset
       const runDuration = parseInt(this.state.duration)
-
+      // DateTime dateTime = DateTime.ParseExact(time, "HH:mm:ss",
+      //   CultureInfo.InvariantCulture);
       console.log(response.data.results)
       console.log(runDuration)
 
@@ -85,9 +86,11 @@ class App extends Component {
       // const runTime = (userRun - runDuration)
 
       const runningTime = new Date(`${this.state.date}(${userRun} - ${runDuration})`);
-      console.log(new Date(runningTime))
+      const TIME = new Date(`${this.state.date} ${morningRun}`)
+      console.log(TIME)
+      console.log(new Date (runningTime))
       
-      console.log(this.state.date + userRun)
+      console.log(this.state.date + " " +  (userRun - runDuration))
 
       // console.log(userRun);
       // console.log(this.state.beforeSunrise, 'this is current time state')
@@ -99,10 +102,14 @@ class App extends Component {
         userTime: runningTime,
       })
       console.log(this.state.userTime)
+      // const myTime = require('moment');
+      // myTime = moment(morningRun)
+      // console.log(myTime)
+      // moment().format();                          // 2020-05-06T20:38:38-04:00
     }
   
       
-    
+
   render() {
     return (
       <main>
@@ -120,7 +127,8 @@ class App extends Component {
 
           <UserSelection
           userInput={this.userInput}
-          />
+        />
+        <Moment></Moment>
       </main>
     )
   }
