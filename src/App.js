@@ -157,6 +157,18 @@ class App extends Component {
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
+    const sunsetDateArray = dateArray.concat(formattedSunsetArray)
+    // console.log({sunsetDateArray})
+
+    const sunsetDateObject = new Date(...sunsetDateArray);
+    console.log({sunsetDateObject})
+
+    const sunriseDateArray = dateArray.concat(sunriseTimeArray)
+    // console.log({sunriseDateArray})
+
+    const sunriseDateObject = new Date(...sunriseDateArray)
+    console.log({sunriseDateObject})
+
     
 
     console.log(formattedSunsetArray)
