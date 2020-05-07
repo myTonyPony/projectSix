@@ -84,7 +84,7 @@ class App extends Component {
     })
   }
    // converts sunrise time
-  sunriseTimeConverter = (sunriseTime) => {
+  sunriseTimeConverter = () => {
     // converts the sunrise time from API - from string to number values
     const sunriseStringOne = this.state.apiTimes.sunrise.split(':', 3)
     const seconds = sunriseStringOne[2].split(" ", 1)
@@ -100,9 +100,7 @@ class App extends Component {
     console.log(finalSunriseNumber)
   }
 
-  convertTimeFormat = () => {
-
-  }
+  
 
   // convert sunset time
   sunsetTimeConverter = () => {
@@ -121,6 +119,23 @@ class App extends Component {
     return finalSunsetNumber;
   }
 
+  convertTimeFormat = (formattedTime) => {
+    const timeToConvert = [...formattedTime]
+    console.log(timeToConvert)
+
+    if (timeToConvert[0] === 12) {
+      // timeToConvert[0] - 12
+      console.log('greater then 12')
+      const newHour = timeToConvert[0] - 12
+      console.log(newHour)
+      
+    } else {
+      console.log('less then 12')
+    }
+
+
+  }
+
   // creates user run
   createRun = () => {
     // this is the value for user date from stringConverter
@@ -132,6 +147,13 @@ class App extends Component {
 
     const sunsetTimeArray = this.sunsetTimeConverter()
     console.log(sunsetTimeArray)
+    
+    // this will the time in 24hr format with the calendar date attached
+    // const formattedSunriseArray = this.convertTimeFormat(sunriseTimeArray)
+    // console.log(formattedSunriseArray)
+
+    const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
+    console.log(formattedSunsetArray)
 
 
 
