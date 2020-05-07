@@ -71,27 +71,47 @@ class App extends Component {
         // anon function above delays createRun until api is finished
       });
   }
-
-    createRun = (response) => {
+  stringConverter = (date) => {
+    console.log(date)
+    // split into three values
+    //split method 
+    // we may use limit on time
+    const dateString = date.split("-",3 )
+    console.log(dateString)
+    //map to new array
+    return dateString.map((date) => {
+      return parseInt(date)
+    })    
+    // console.log(dateNumber)
+  }
+  // dateConverter = (date) => date.split("-", 3).map((date) => parseInt(date));
+  // do the same for time - concat into one array - additional logic for the 24hr clock could be a condition inside the string converter that pops off the last two digits of that string and if am - pm change into 
+  createRun = (response) => {
+    const dateArray = this.stringConverter(this.state.date)
+    console.log(dateArray)
       // // set variables for Sunset and Sunrise times
-      const morningRun = new Date(response.data.results.sunrise)
+      const morningRun = response.data.results.sunrise
       const nightRun = response.data.results.sunset
       const runDuration = parseInt(this.state.duration)
       // DateTime dateTime = DateTime.ParseExact(time, "HH:mm:ss",
       //   CultureInfo.InvariantCulture);
-      console.log(response.data.results)
-      console.log(runDuration)
+      // console.log(response.data.results)
+      // console.log(runDuration)
 
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
       // const runTime = (userRun - runDuration)
+// //////////need to break down date and time into individual values - converting the one string into three values //////////
+      // function 
 
+      
+      
       const runningTime = new Date(`${this.state.date}(${userRun} - ${runDuration})`);
       const TIME = new Date(`${this.state.date} ${morningRun}`)
-      console.log(TIME)
-      console.log(new Date (runningTime))
+      // console.log(TIME)
+      // console.log(new Date (runningTime))
       
-      console.log(this.state.date + " " +  (userRun - runDuration))
-
+      // console.log(this.state.date + " " +  (userRun - runDuration))
+// mapping to the page // 
       // console.log(userRun);
       // console.log(this.state.beforeSunrise, 'this is current time state')
 
@@ -101,7 +121,7 @@ class App extends Component {
       this.setState({
         userTime: runningTime,
       })
-      console.log(this.state.userTime)
+      // console.log(this.state.userTime)
       // const myTime = require('moment');
       // myTime = moment(morningRun)
       // console.log(myTime)
