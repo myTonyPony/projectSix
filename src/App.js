@@ -33,22 +33,18 @@ class App extends Component {
     this.setState({
       beforeSunrise
     })
-    // console.log(event.target.checked)
   }
 
   handleDate = (event) => {
     this.setState({
       date: event.target.value,
     })
-    // console.log(event.target.value)
-    
   }
 
   handleDuration = (event) => {
     this.setState({
       duration: event.target.value,
     })
-    // console.log(event.target.value)
   }
 
 
@@ -66,7 +62,6 @@ class App extends Component {
       }
     })
       .then((response) => {
-        // console.log(response);
         this.setState({
           apiTimes: response.data.results
         },() => this.createRun() )
@@ -91,16 +86,12 @@ class App extends Component {
     const sunriseStringThree = sunriseStringOne.pop()
     // concat the two arrays together with out AM/PM values
     const finalSunriseString = sunriseStringOne.concat(seconds)
-    console.log(finalSunriseString)
     // convert array into number values
     const finalSunriseNumber = finalSunriseString.map((sRiseTimes) => {
       return parseInt(sRiseTimes)
     })
     return finalSunriseNumber
-    console.log(finalSunriseNumber)
   }
-
-  
 
   // convert sunset time
   sunsetTimeConverter = () => {
@@ -110,32 +101,25 @@ class App extends Component {
     const sunsetStringThree = sunsetStringOne.pop()
     // concat the two arrays together with out AM/PM values
     const finalSunsetString = sunsetStringOne.concat(secondsTwo)
-    console.log(finalSunsetString)
     // convert array into number values
     const finalSunsetNumber = finalSunsetString.map((sunsetTimes) => {
       return parseInt(sunsetTimes)
     })
-    console.log(finalSunsetNumber)
     return finalSunsetNumber;
   }
 
   // this converts the sunrise time to 24 hour time
   convertTimeFormat = (formattedTime) => {
     const timeToConvert = [...formattedTime]
-    console.log(timeToConvert)
 
     if (timeToConvert[0] === 12) {
-      // timeToConvert[0] - 12
-      console.log('look IM 12')
+      
       const newHour = timeToConvert[0] - 12
       const newTimeToConvert = timeToConvert.shift()
-      console.log(newTimeToConvert)
-      console.log(timeToConvert)
+      
       const formattedTimeAgain = timeToConvert.unshift(newHour)
-      console.log(formattedTimeAgain)
-      console.log(timeToConvert)
+      
     } else {
-      console.log('less then 12')
       const sameHour = timeToConvert[0] - 0
     }
     //returns to the function in createRun
@@ -143,12 +127,22 @@ class App extends Component {
 
   }
 
+  //this converts the sunset time to EST time
+  timeToEst = (easternTime) => {
+    
+    if (easternTime[3] >= 5) {
+      return easternTime[3] - 4
+    } else {
+      return easternTime[3] + 20
+    } 
+    // we want to take out the value easternTime[3] and return it using splice or slice // google ways how to change a single value in an array 
+  }
   // creates user run
   createRun = () => {
     // this is the value returned from timeConverter
     const dateArray = this.dateConverter(this.state.date)
     console.log(dateArray)
-    // this the value returned from the suriseTimeConverter
+    // this the value returned from the sunriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
     console.log(sunriseTimeArray)
     // this is the value returned from the sunsetTimeConverter
@@ -158,13 +152,15 @@ class App extends Component {
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
     const sunsetDateArray = dateArray.concat(formattedSunsetArray)
-    // console.log({sunsetDateArray})
+    const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
+    const convertedToSunriseEst = this.timeToEst(sunriseTimeArray)
+    console.log({convertedToSunsetEst});
+    console.log({convertedToSunriseEst});
 
     const sunsetDateObject = new Date(...sunsetDateArray);
     console.log({sunsetDateObject})
 
     const sunriseDateArray = dateArray.concat(sunriseTimeArray)
-    // console.log({sunriseDateArray})
 
     const sunriseDateObject = new Date(...sunriseDateArray)
     console.log({sunriseDateObject})
@@ -174,16 +170,9 @@ class App extends Component {
     console.log(formattedSunsetArray)
 
     // const weRunningInTheMorning = new Date()
-
-    
-
-
-
-
     
     // this is the value of the sunrise time in a array
     // const sunriseTimes = this.stringConverter(this.state.date.sRiseTimes)
-    // console.log(sunriseTimes)
     
       // // set variables for Sunset and Sunrise times
       const morningRun = this.state.apiTimes.sunrise
@@ -192,8 +181,7 @@ class App extends Component {
       const runDuration = parseInt(this.state.duration)
       // DateTime dateTime = DateTime.ParseExact(time, "HH:mm:ss",
       //   CultureInfo.InvariantCulture);
-      // console.log(response.data.results)
-      // console.log(runDuration)
+  
 
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
       // const runTime = (userRun - runDuration)
@@ -204,28 +192,13 @@ class App extends Component {
       
       const runningTime = new Date(`${this.state.date}(${userRun} - ${runDuration})`);
       const TIME = new Date(`${this.state.date} ${morningRun}`)
-      // console.log(TIME)
-      // console.log(new Date (runningTime))
       
-      // console.log(this.state.date + " " +  (userRun - runDuration))
 // mapping to the page // 
-      // console.log(userRun);
-      // console.log(this.state.beforeSunrise, 'this is current time state')
-
-      // console.log(this.state.beforeSunrise);
-      // console.log(nightRun)
-
       this.setState({
         userTime: runningTime,
       })
-      // console.log(this.state.userTime)
-      // const myTime = require('moment');
-      // myTime = moment(morningRun)
-      // console.log(myTime)
-      // moment().format();                          // 2020-05-06T20:38:38-04:00
-    }
-  
       
+    }
 
   render() {
     return (
