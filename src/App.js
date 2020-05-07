@@ -23,6 +23,8 @@ class App extends Component {
       date: '',
       duration: 0,
       userTime:'',
+      morningRun: '',
+      nightRun: '',
     }
   }
 
@@ -94,18 +96,17 @@ class App extends Component {
     const finalSunsetString = sunsetStringOne.concat(secondsTwo)
     console.log(finalSunsetString)
     // convert array into number values
-    const finalSunsetNumber = finalSunsetString.map((sSetTimes) => {
-      return parseInt(sSetTimes)
+    const finalSunsetNumber = finalSunsetString.map((sunsetTimes) => {
+      return parseInt(sunsetTimes)
     })
     console.log(finalSunsetNumber)
-    
-
+  
     // converts user selected date into number values
     const dateString = date.split("-",3 )
     //map to new array
     return dateString.map((date) => {
       return parseInt(date)
-    }) 
+    })
   }
   // dateConverter = (date) => date.split("-", 3).map((date) => parseInt(date));
   // do the same for time - concat into one array - additional logic for the 24hr clock could be a condition inside the string converter that pops off the last two digits of that string and if am - pm change into 
@@ -113,7 +114,8 @@ class App extends Component {
     // this is the value for user date from stringConverter
     const dateArray = this.stringConverter(this.state.date)
     console.log(dateArray)
-    
+    // const sunriseArray = this.stringConverter(this.finalSunriseNumber)
+    // console.log(sunriseArray)
 
     
       // // set variables for Sunset and Sunrise times
