@@ -18,7 +18,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      suggestedTime: [], 
+      apiTimes: [], 
       beforeSunrise: null,
       date: '',
       duration: 0,
@@ -66,32 +66,60 @@ class App extends Component {
       .then((response) => {
         // console.log(response);
         this.setState({
-          suggestedTime: response.data.results
-        },() => this.createRun(response) )
+          apiTimes: response.data.results
+        },() => this.createRun() )
         // anon function above delays createRun until api is finished
       });
   }
   stringConverter = (date) => {
-    console.log(date)
-    // split into three values
-    //split method 
-    // we may use limit on time
+
+    // converts the sunrise time from API - from string to number values
+    const sunriseStringOne = this.state.apiTimes.sunrise.split(':', 3)
+    const seconds = sunriseStringOne[2].split(" ",1)
+    const sunriseStringThree = sunriseStringOne.pop()
+    // concat the two arrays together with out AM/PM values
+    const finalSunriseString = sunriseStringOne.concat(seconds)
+    console.log(finalSunriseString)
+    // convert array into number values
+    const finalSunriseNumber = finalSunriseString.map((sRiseTimes) =>{
+      return parseInt(sRiseTimes)
+    })
+    console.log(finalSunriseNumber)
+
+    // coverts sunset time into number values
+    const sunsetStringOne = this.state.apiTimes.sunset.split(':', 3)
+    const secondsTwo = sunsetStringOne[2].split(" ", 1)
+    const sunsetStringThree = sunsetStringOne.pop()
+    // concat the two arrays together with out AM/PM values
+    const finalSunsetString = sunsetStringOne.concat(secondsTwo)
+    console.log(finalSunsetString)
+    // convert array into number values
+    const finalSunsetNumber = finalSunsetString.map((sSetTimes) => {
+      return parseInt(sSetTimes)
+    })
+    console.log(finalSunsetNumber)
+    
+
+    // converts user selected date into number values
     const dateString = date.split("-",3 )
-    console.log(dateString)
     //map to new array
     return dateString.map((date) => {
       return parseInt(date)
-    })    
-    // console.log(dateNumber)
+    }) 
   }
   // dateConverter = (date) => date.split("-", 3).map((date) => parseInt(date));
   // do the same for time - concat into one array - additional logic for the 24hr clock could be a condition inside the string converter that pops off the last two digits of that string and if am - pm change into 
-  createRun = (response) => {
+  createRun = () => {
+    // this is the value for user date from stringConverter
     const dateArray = this.stringConverter(this.state.date)
     console.log(dateArray)
+    
+
+    
       // // set variables for Sunset and Sunrise times
-      const morningRun = response.data.results.sunrise
-      const nightRun = response.data.results.sunset
+      const morningRun = this.state.apiTimes.sunrise
+      const nightRun = this.state.apiTimes.sunset
+      
       const runDuration = parseInt(this.state.duration)
       // DateTime dateTime = DateTime.ParseExact(time, "HH:mm:ss",
       //   CultureInfo.InvariantCulture);
