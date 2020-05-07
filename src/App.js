@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   //split into three functions and pass the params to the createRun
-  timeConverter = (date) => {
+  dateConverter = (date) => {
   // converts user selected date into number values
     const dateString = date.split("-", 3)
     //map to new array
@@ -119,41 +119,51 @@ class App extends Component {
     return finalSunsetNumber;
   }
 
+  // this converts the sunrise time to 24 hour time
   convertTimeFormat = (formattedTime) => {
     const timeToConvert = [...formattedTime]
     console.log(timeToConvert)
 
     if (timeToConvert[0] === 12) {
       // timeToConvert[0] - 12
-      console.log('greater then 12')
+      console.log('look IM 12')
       const newHour = timeToConvert[0] - 12
-      console.log(newHour)
-      
+      const newTimeToConvert = timeToConvert.shift()
+      console.log(newTimeToConvert)
+      console.log(timeToConvert)
+      const formattedTimeAgain = timeToConvert.unshift(newHour)
+      console.log(formattedTimeAgain)
+      console.log(timeToConvert)
     } else {
       console.log('less then 12')
+      const sameHour = timeToConvert[0] - 0
     }
-
+    //returns to the function in createRun
+    return timeToConvert;
 
   }
 
   // creates user run
   createRun = () => {
-    // this is the value for user date from stringConverter
-    const dateArray = this.timeConverter(this.state.date)
+    // this is the value returned from timeConverter
+    const dateArray = this.dateConverter(this.state.date)
     console.log(dateArray)
-
+    // this the value returned from the suriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
     console.log(sunriseTimeArray)
-
+    // this is the value returned from the sunsetTimeConverter
     const sunsetTimeArray = this.sunsetTimeConverter()
     console.log(sunsetTimeArray)
     
-    // this will the time in 24hr format with the calendar date attached
-    // const formattedSunriseArray = this.convertTimeFormat(sunriseTimeArray)
-    // console.log(formattedSunriseArray)
-
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
+
+    
+
     console.log(formattedSunsetArray)
+
+    // const weRunningInTheMorning = new Date()
+
+    
 
 
 
