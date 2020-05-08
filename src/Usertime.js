@@ -4,8 +4,7 @@ const Usertime = (props) => {
   console.log(props);
   return (
     <main>
-      {
-      props.userTime}
+     <h1>{props.userTime}</h1>
     </main>
   );
 }

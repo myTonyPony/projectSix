@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Moment from 'react-moment'
-import 'moment-timezone'
 
 // import components
 import Form from './Form';
-import UserSelection from './UserSelection';
 import Usertime from './Usertime';
 
 
@@ -138,6 +135,10 @@ class App extends Component {
     } 
     // we want to take out the value easternTime[3] and return it using splice or slice // google ways how to change a single value in an array 
   }
+
+  // create array with final time strings
+  
+
   // creates user run
   createRun = () => {
     // this is the value returned from timeConverter
@@ -185,8 +186,22 @@ class App extends Component {
 
     let nightRun = sunsetDateObject;
     nightRun.setMinutes(nightRun.getMinutes()-runDuration)
+
+    const morningRunString = morningRun.toTimeString()
+    console.log(morningRunString);
+
+    const nightRunString = nightRun.toTimeString()
+    console.log(nightRunString);
+
+    const finalMorningString = morningRunString.slice(0,8)
+    console.log(finalMorningString);
+
+    const finalNightString = nightRunString.slice(0,8)
+
+    console.log(finalNightString);
+
       
-    const userRun = this.state.beforeSunrise ? morningRun.toTimeString() : nightRun.toTimeString()
+    const userRun = this.state.beforeSunrise ? finalMorningString : finalNightString
     
     
 
@@ -211,9 +226,6 @@ class App extends Component {
           duration={this.state.duration}
           beforeSunrise={this.state.beforeSunrise}
           />
-          <UserSelection
-          userInput={this.userInput}
-        />
         <Usertime userTime={this.state.userTime}/>
       </main>
     )
