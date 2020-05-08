@@ -5,7 +5,8 @@ import 'moment-timezone'
 
 // import components
 import Form from './Form';
-import UserSelection from './UserSelection'
+import UserSelection from './UserSelection';
+import Usertime from './Usertime';
 
 
 // First, we get the date for the user of when they would like to run.
@@ -22,7 +23,7 @@ class App extends Component {
       beforeSunrise: null,
       date: '',
       duration: 0,
-      userTime:'',
+      userTime:[],
       morningRun: '',
       nightRun: '',
     }
@@ -169,7 +170,6 @@ class App extends Component {
     sunriseDateArrayFinal[3] = convertedToSunriseEst;
     // console.log({sunriseDateArrayFinal});
 
-
     const sunsetDateObject = new Date(...sunsetDateArrayFinal);
     console.log({sunsetDateObject})
 
@@ -179,14 +179,17 @@ class App extends Component {
     const runDuration = parseInt(this.state.duration);
 
       // set variables for Sunset and Sunrise times
-      let morningRun = sunriseDateObject;
-      morningRun.setMinutes(morningRun.getMinutes()-runDuration)
+    let morningRun = sunriseDateObject;
+    morningRun.setMinutes(morningRun.getMinutes()-runDuration)
+    console.log(morningRun)
 
-      let nightRun = sunsetDateObject;
-      nightRun.setMinutes(nightRun.getMinutes()-runDuration)
+    let nightRun = sunsetDateObject;
+    nightRun.setMinutes(nightRun.getMinutes()-runDuration)
       
-      const userRun = this.state.beforeSunrise ? morningRun : nightRun
-      console.log({userRun})
+    const userRun = this.state.beforeSunrise ? morningRun.toTimeString() : nightRun.toTimeString()
+    
+    
+
 
 // mapping to the page // 
       this.setState({
@@ -199,7 +202,6 @@ class App extends Component {
     return (
       <main>
         <h1>Fun Run</h1>
-
         <Form 
           handleSubmit={this.handleSubmit}
           handleSunrise={this.handleSunrise}
@@ -209,11 +211,10 @@ class App extends Component {
           duration={this.state.duration}
           beforeSunrise={this.state.beforeSunrise}
           />
-
           <UserSelection
           userInput={this.userInput}
         />
-        <Moment></Moment>
+        <Usertime userTime={this.state.userTime}/>
       </main>
     )
   }
