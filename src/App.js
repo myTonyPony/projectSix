@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 // import components
-import Form from './Form';
-import Usertime from './Usertime';
+import Form from './components/Form/Form';
+import Usertime from './components/UserTime/Usertime';
 
+//Sass
+import './styles/setup.scss'
+import './styles/global.scss'
 
 // First, we get the date for the user of when they would like to run.
 // Then, we ask if they'd like to hit the sunrise or the sunset. 
