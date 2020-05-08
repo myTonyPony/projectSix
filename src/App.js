@@ -141,33 +141,44 @@ class App extends Component {
   createRun = () => {
     // this is the value returned from timeConverter
     const dateArray = this.dateConverter(this.state.date)
-    console.log(dateArray)
+    // console.log(dateArray)
     // this the value returned from the sunriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
-    console.log(sunriseTimeArray)
+    // console.log(sunriseTimeArray)
     // this is the value returned from the sunsetTimeConverter
     const sunsetTimeArray = this.sunsetTimeConverter()
-    console.log(sunsetTimeArray)
+    // console.log(sunsetTimeArray)
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
     const sunsetDateArray = dateArray.concat(formattedSunsetArray)
-    const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
-    const convertedToSunriseEst = this.timeToEst(sunriseTimeArray)
-    console.log({convertedToSunsetEst});
-    console.log({convertedToSunriseEst});
+    const sunriseDateArray = dateArray.concat(sunriseTimeArray);
 
-    const sunsetDateObject = new Date(...sunsetDateArray);
+
+    const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
+    const convertedToSunriseEst = this.timeToEst(sunriseDateArray)
+    
+    // console.log({convertedToSunsetEst});
+    // console.log({convertedToSunriseEst});
+
+    const sunsetDateArrayFinal = [...sunsetDateArray]
+    sunsetDateArrayFinal[3] = convertedToSunsetEst;
+    // console.log({sunsetDateArrayFinal});
+
+    const sunriseDateArrayFinal = [...sunriseDateArray]
+    sunriseDateArrayFinal[3] = convertedToSunriseEst;
+    // console.log({sunriseDateArrayFinal});
+
+
+    const sunsetDateObject = new Date(...sunsetDateArrayFinal);
     console.log({sunsetDateObject})
 
-    const sunriseDateArray = dateArray.concat(sunriseTimeArray)
-
-    const sunriseDateObject = new Date(...sunriseDateArray)
+    const sunriseDateObject = new Date(...sunriseDateArrayFinal)
     console.log({sunriseDateObject})
 
     
 
-    console.log(formattedSunsetArray)
+    // console.log(formattedSunsetArray)
 
     // const weRunningInTheMorning = new Date()
     
