@@ -175,38 +175,22 @@ class App extends Component {
 
     const sunriseDateObject = new Date(...sunriseDateArrayFinal)
     console.log({sunriseDateObject})
-
     
+    const runDuration = parseInt(this.state.duration);
 
-    // console.log(formattedSunsetArray)
+      // set variables for Sunset and Sunrise times
+      let morningRun = sunriseDateObject;
+      morningRun.setMinutes(morningRun.getMinutes()-runDuration)
 
-    // const weRunningInTheMorning = new Date()
-    
-    // this is the value of the sunrise time in a array
-    // const sunriseTimes = this.stringConverter(this.state.date.sRiseTimes)
-    
-      // // set variables for Sunset and Sunrise times
-      const morningRun = this.state.apiTimes.sunrise
-      const nightRun = this.state.apiTimes.sunset
+      let nightRun = sunsetDateObject;
+      nightRun.setMinutes(nightRun.getMinutes()-runDuration)
       
-      const runDuration = parseInt(this.state.duration)
-      // DateTime dateTime = DateTime.ParseExact(time, "HH:mm:ss",
-      //   CultureInfo.InvariantCulture);
-  
-
       const userRun = this.state.beforeSunrise ? morningRun : nightRun
-      // const runTime = (userRun - runDuration)
-// //////////need to break down date and time into individual values - converting the one string into three values //////////
-      // function 
+      console.log({userRun})
 
-      
-      
-      const runningTime = new Date(`${this.state.date}(${userRun} - ${runDuration})`);
-      const TIME = new Date(`${this.state.date} ${morningRun}`)
-      
 // mapping to the page // 
       this.setState({
-        userTime: runningTime,
+        userTime: userRun
       })
       
     }
