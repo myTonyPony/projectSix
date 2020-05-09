@@ -220,16 +220,20 @@ class App extends Component {
     return (
       <main>
         <h1>Fun Run</h1>
-        <Form 
-          handleSubmit={this.handleSubmit}
-          handleSunrise={this.handleSunrise}
-          handleDate={this.handleDate}
-          date={this.state.date}
-          handleDuration={this.handleDuration}
-          duration={this.state.duration}
-          beforeSunrise={this.state.beforeSunrise}
-          />
-        <Usertime userTime={this.state.userTime}/>
+        <section className="formSection">
+          <Form className="form"
+            handleSubmit={this.handleSubmit}
+            handleSunrise={this.handleSunrise}
+            handleDate={this.handleDate}
+            date={this.state.date}
+            handleDuration={this.handleDuration}
+            duration={this.state.duration}
+            beforeSunrise={this.state.beforeSunrise}
+            />
+        </section>
+        <section id="results">
+          <Usertime userTime={this.state.userTime}/>
+        </section>
       </main>
     )
   }
