@@ -1,3 +1,11 @@
+$red: #D66761;
+$green: #B8E070;
+$yellow: #FFFE93;
+$darkBlue: #7A918D;
+$lightBlue: #93B1A7;
+$white: #FAFAFA;
+$black: #373737;
+
 header {
   height: 100vh;
   background-color: #b8e070;
@@ -5,11 +13,11 @@ header {
 
 .headerContainer {
   position: relative;
-  background: url("../../assets/tomasz-wozniak-V62UrdknDCA-unsplash.jpg") 50%
-    no-repeat;
+  background-image: url('../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg');
   background-size: cover;
   background-position: center;
-  height: 10vh;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .headerContent,
@@ -17,40 +25,46 @@ header {
 .infoButton {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .headerContent h1 {
-  padding: 80px 40px;
-  font-size: 6rem;
+  font-size: 10rem;
   font-weight: 900;
   text-align: center;
+  text-shadow: 0 0 1rem;
+  color: white;
 }
 
-.chevronDown,
 .infoButton {
-  padding: 240px 0 0 0;
+  padding: 120px 0 0 0;
 }
-.fa-chevron-down,
-.fa-info {
-  font-size: 3.5rem;
+
+.fa-info-circle {
+  font-size: 5.5rem;
+  color: $white;
+  margin-bottom: 1px;
 }
 
 .goRun {
-  padding: 10px;
-  font-size: 1.5rem;
-  height: 45px;
+  padding: 10px 0;
+  font-size: 2.5rem;
   display: flex;
-  width: auto;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 145px;
   justify-content: center;
   align-items: center;
-  border: 3px solid #000;
-  border-radius: 10px;
+  border: 5px solid $black;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: $white;
+  text-transform: capitalize;
+  background-color: $yellow;
+  color: $red;
   &:hover {
     transition: ease 0.4s;
-    background-color: #fffe93;
+    background-color: $green;
     color: #d66761;
   }
 }
@@ -62,12 +76,11 @@ header {
 .dropdownContent {
   display: none;
   position: absolute;
-  right: 0;
-  bottom: -80%;
+  bottom: 40%;
   background-color: #f9f9f9;
-  min-width: 100px;
+  width: 50%;
+  margin: 0 auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  margin: 10px 10px;
   padding: 16px 10px;
   z-index: 1;
   font-size: 1.5rem;

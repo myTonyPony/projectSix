@@ -7,6 +7,7 @@ import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
 //Sass
+import './styles/variable.scss'
 import './styles/setup.scss'
 import './styles/global.scss'
 
@@ -142,6 +143,7 @@ class App extends Component {
     const dateArray = this.dateConverter(this.state.date)
     // this the value returned from the sunriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
+    const sunsetTimeArray = this.sunsetTimeConverter()
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
@@ -188,12 +190,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <Header />
-        <main>
-        <section className="formSection">
-          <div className="wrapper">
-          <Form className="form"
+        <section className="formSection" id="form">
+          <div>
+          <Form 
             handleSubmit={this.handleSubmit}
             handleSunrise={this.handleSunrise}
             handleDate={this.handleDate}
@@ -205,7 +206,6 @@ class App extends Component {
             </div>
           </section>
          <Usertime userTime={this.state.userTime}/>
-        </main>
       </div>
     )
   }
