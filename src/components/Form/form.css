@@ -1,0 +1,142 @@
+.formSection {
+  background-color: #FFFE93;
+  height: 100vh;
+}
+
+form {
+  padding-top: 50px;
+  height: auto;
+  width: 50%;
+  margin: 0 auto;
+}
+
+form h3 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 100px;
+}
+
+form .formParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .radioParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+}
+
+form .dateLabel {
+  margin: 10px;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+form .dateParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+form input[type="date"] {
+  width: auto;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  border: none;
+  border: 3px solid #D66761;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+form .radioParent label {
+  margin: 20px;
+  padding: 10px;
+  font-size: 17px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #D66761;
+  border-radius: 10px;
+}
+
+form input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  left: 915px;
+  top: 393px;
+}
+
+form input[type="radio"]:focus + label,
+form input[type="radio"]:checked + label {
+  background-color: #B8E070;
+}
+
+form select {
+  color: black;
+  font-size: 2rem;
+  width: 300px;
+  padding: 1rem;
+  border: 3px solid #D66761;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  -moz-appearance: none;
+  background: url("../../noun_Arrow Down_91506.png");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%, 0 0;
+  background-size: 3rem;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+form button.submit {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: transparent;
+  border: 3px solid #D66761;
+  border-radius: 10px;
+  font-family: 'Roboto';
+  font-size: 30px;
+  padding: 10px;
+  background-color: #B8E070;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+form button.submit:hover, form button.submit:focus {
+  background-color: #D66761;
+}
+/*# sourceMappingURL=form.css.map */
