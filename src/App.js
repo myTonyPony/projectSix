@@ -218,7 +218,8 @@ class App extends Component {
             />
               : <Usertime 
               userTime={this.state.userTime}
-              resetPage={this.resetPage} />
+              resetPage={this.resetPage}
+              nightOrDay={this.state.beforeSunrise} />
             }
             </div>
           </section>
