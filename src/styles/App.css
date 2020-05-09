@@ -1,0 +1,595 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* global settings */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  padding: 10px 0;
+  font-size: 2.5rem;
+  width: 200px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #FAFAFA;
+  text-transform: capitalize;
+  -webkit-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #a0403a;
+  color: #FFFE93;
+}
+
+.btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+header {
+  height: 100vh;
+}
+
+.headerContainer {
+  position: relative;
+  background-image: url("../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.headerContent,
+.chevronDown,
+.infoButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerContent h1 {
+  font-size: 10rem;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 0 0 1rem;
+  color: white;
+  margin: 6rem 0;
+}
+
+.infoButton {
+  padding: 320px 0 0 0;
+}
+
+.fa-info-circle {
+  font-size: 5rem;
+  color: #FAFAFA;
+  margin-bottom: 1px;
+}
+
+.goRun {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 22px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #D66761;
+  color: #FAFAFA;
+  border: 2px solid #FAFAFA;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  border-radius: 10px;
+  background-color: #FAFAFA;
+  width: 50%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 16px 10px;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+
+.dropdownContent p {
+  padding: 5px 5px;
+}
+
+.dropdown:hover .dropdownContent,
+.dropdown:focus .dropdownContent {
+  display: block;
+  border: 2px solid #D66761;
+  -webkit-transition: ease 0.6s;
+  transition: ease 0.6s;
+  background-color: #fffe93;
+  color: #d66761;
+}
+
+.formSection {
+  background-color: #36485A;
+  height: 100vh;
+}
+
+form {
+  padding-top: 50px;
+  height: auto;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+}
+
+form h3 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 70px;
+  color: #FAFAFA;
+  letter-spacing: 2px;
+  text-shadow: 0 0 0.2rem;
+}
+
+form .formParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .radioParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 35px;
+}
+
+form .dateLabel {
+  margin: 10px;
+  font-family: 'Roboto';
+  font-size: 24px;
+}
+
+form .dateParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 35px;
+}
+
+form input[type="date"] {
+  width: auto;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: none;
+  border: 2px solid #FAFAFA;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 15px 25px;
+  background-color: #93B1A7;
+  color: #373737;
+}
+
+form .radioParent label {
+  margin: 40px;
+  padding: 15px 25px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #FAFAFA;
+  background-color: #93B1A7;
+  color: #373737;
+}
+
+form input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  left: 974px;
+  top: 1098px;
+}
+
+form input[type="radio"]:focus + label,
+form input[type="radio"]:checked + label {
+  background-color: #B8E070;
+  color: #373737;
+  border: 2px solid #D66761;
+}
+
+form select {
+  color: black;
+  font-size: 2rem;
+  width: 300px;
+  padding: 1rem;
+  border: 2px solid white;
+  text-align: center;
+  margin-bottom: 10px;
+  -moz-appearance: none;
+  background: url("../../assets/noun_Arrow Down_91506.png");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%, 0 0;
+  background-size: 3rem;
+  background-color: #93B1A7;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  color: #373737;
+}
+
+form button.submit {
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: transparent;
+  border: 2px solid #FAFAFA;
+  font-size: 30px;
+  padding: 15px 25px;
+  background-color: #D66761;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  text-align: center;
+  color: #FAFAFA;
+}
+
+form button.submit:hover, form button.submit:focus {
+  color: #FFFE93;
+  background-color: #a0403a;
+}
+
+.resultsSectionMorning,
+.resultsSectionNight {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.resultsSectionMorning {
+  background-image: url("../../assets/morning-toronto.jpg");
+}
+
+.resultsSectionNight {
+  background-image: url("../../assets/night-toronto.jpg");
+}
+
+.resultsInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.results {
+  font-size: 7rem;
+  color: #fafafa;
+  text-shadow: 0 0 1rem #000;
+}
+
+.reset {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #fafafa;
+  text-shadow: 0 0 1rem #000;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=App.css.map */

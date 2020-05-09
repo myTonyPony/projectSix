@@ -1,3 +1,11 @@
+$red: #D66761;
+$green: #B8E070;
+$yellow: #FFFE93;
+$darkBlue: #7A918D;
+$lightBlue: #93B1A7;
+$white: #FAFAFA;
+$black: #291F1E;
+
 .resultsSectionMorning,
 .resultsSectionNight {
   height: 100vh;
@@ -15,8 +23,6 @@
 .resultsSectionNight {
   background-image: url('../../assets/night-toronto.jpg');
 }
-
-
 
 .resultsInfo {
   display: flex;
