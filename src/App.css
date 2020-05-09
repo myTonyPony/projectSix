@@ -300,103 +300,6 @@ img {
           transform: scale(0.9);
 }
 
-header {
-  height: 100vh;
-}
-
-.headerContainer {
-  position: relative;
-  background-image: url("../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
-.headerContent,
-.chevronDown,
-.infoButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.headerContent h1 {
-  font-size: 10rem;
-  font-weight: 900;
-  text-align: center;
-  text-shadow: 0 0 1rem;
-  color: white;
-  margin: 6rem 0;
-}
-
-.infoButton {
-  padding: 320px 0 0 0;
-}
-
-.fa-info-circle {
-  font-size: 5rem;
-  color: #FAFAFA;
-  margin-bottom: 1px;
-}
-
-.goRun {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 22px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #D66761;
-  color: #FAFAFA;
-  border: 2px solid #FAFAFA;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdownContent {
-  display: none;
-  position: absolute;
-  bottom: 50%;
-  border-radius: 10px;
-  background-color: #FAFAFA;
-  width: 50%;
-  margin: 0 auto;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 16px 10px;
-  z-index: 1;
-  font-size: 1.5rem;
-}
-
-.dropdownContent p {
-  padding: 5px 5px;
-}
-
-.dropdown:hover .dropdownContent,
-.dropdown:focus .dropdownContent {
-  display: block;
-  border: 2px solid #D66761;
-  -webkit-transition: ease 0.6s;
-  transition: ease 0.6s;
-  background-color: #fffe93;
-  color: #d66761;
-}
-
 .formSection {
   background-color: #36485A;
   height: 100vh;
@@ -493,8 +396,8 @@ form .radioParent label {
 form input[type="radio"] {
   opacity: 0;
   position: absolute;
-  left: 974px;
-  top: 1098px;
+  left: 915px;
+  top: 393px;
 }
 
 form input[type="radio"]:focus + label,
@@ -513,7 +416,7 @@ form select {
   text-align: center;
   margin-bottom: 10px;
   -moz-appearance: none;
-  background: url("../../assets/noun_Arrow Down_91506.png");
+  background: url("../../noun_Arrow Down_91506.png");
   background-repeat: no-repeat;
   background-position: right 0.7rem top 50%, 0 0;
   background-size: 3rem;
@@ -604,7 +507,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   background-color: #D66761;
-  color: #FAFAFA;
+  color: #D66761;
   border: 2px solid #FAFAFA;
 }
 
@@ -675,11 +578,6 @@ header {
           align-items: center;
 }
 
-
-.results {
-  font-size: 7rem;
-  color: #fafafa;
-  text-shadow: 0 0 1rem #000;
 .resultsNight,
 .resultsMorning {
   font-size: 7rem;

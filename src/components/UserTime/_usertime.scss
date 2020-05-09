@@ -1,11 +1,3 @@
-$red: #D66761;
-$green: #B8E070;
-$yellow: #FFFE93;
-$darkBlue: #7A918D;
-$lightBlue: #93B1A7;
-$white: #FAFAFA;
-$black: #291F1E;
-
 .resultsSectionMorning,
 .resultsSectionNight {
   height: 100vh;
@@ -18,6 +10,7 @@ $black: #291F1E;
 
 .resultsSectionMorning {
   background-image: url('../../assets/morning-toronto.jpg');
+
 }
 
 .resultsSectionNight {
@@ -36,6 +29,26 @@ $black: #291F1E;
   color: #fafafa;
   // text-shadow: 0 0 1rem;
   text-shadow: 0 0 1rem #000;
+
+  .resultsNight,
+.resultsMorning {
+  font-size: 7rem;
+  color: #fafafa; 
+}
+
+.resultsNight {
+  text-shadow: 0 0 1rem;
+}
+
+.resultsMorning {
+  text-shadow: 0 0 1rem #000;
+}
+
+.resultsBlurb {
+  color: #fafafa;
+  font-size: 2rem;
+  text-shadow: 0 0 1rem #000;
+  margin-bottom: 1rem;
 }
 
 .reset {

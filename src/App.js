@@ -6,7 +6,6 @@ import Header from './components/Header/Header'
 import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
-// Import scss
 import './styles/App.scss'
 
 // First, we get the date for the user of when they would like to run.
@@ -216,7 +215,8 @@ class App extends Component {
             />
               : <Usertime 
               userTime={this.state.userTime}
-              resetPage={this.resetPage} />
+              resetPage={this.resetPage}
+              nightOrDay={this.state.beforeSunrise} />
             }
             </div>
           </section>
