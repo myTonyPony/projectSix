@@ -79,8 +79,9 @@ form {
     top: 393px;
     &:focus+label,
     &:checked+label {
-      background-color: $yellow;
+      background-color: $green;
       color: $black;
+      border: 2px solid $red;
     }
   }
   select {
@@ -117,7 +118,7 @@ form {
     &:hover,
     &:focus {
       color: $yellow;
-      background-color: $black;
+      background-color: rgb(160, 64, 58);;
     }
   }
 }
