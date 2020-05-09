@@ -189,14 +189,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-
         <Header />
-      
         <main>
-          <h1>Fun Run</h1>
-          <Form 
-      <main>
-        <h1>Fun Run</h1>
         <section className="formSection">
           <div className="wrapper">
           <Form className="form"
@@ -208,11 +202,11 @@ class App extends Component {
             duration={this.state.duration}
             beforeSunrise={this.state.beforeSunrise}
             />
+            </div>
           </section>
          <Usertime userTime={this.state.userTime}/>
         </main>
       </div>
-
     )
   }
 }
