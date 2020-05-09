@@ -114,18 +114,15 @@ class App extends Component {
     const timeToConvert = [...formattedTime]
 
     if (timeToConvert[0] === 12) {
-      
       const newHour = timeToConvert[0] - 12
       const newTimeToConvert = timeToConvert.shift()
-      
       const formattedTimeAgain = timeToConvert.unshift(newHour)
-      
+
     } else {
       const sameHour = timeToConvert[0] - 0
     }
     //returns to the function in createRun
     return timeToConvert;
-
   }
 
   //this converts the sunset time to EST time
@@ -135,85 +132,60 @@ class App extends Component {
       return easternTime[3] - 4
     } else {
       return easternTime[3] + 20
-    } 
-    // we want to take out the value easternTime[3] and return it using splice or slice // google ways how to change a single value in an array 
+    }
   }
-
-  // create array with final time strings
-  
 
   // creates user run
   createRun = () => {
     // this is the value returned from timeConverter
     const dateArray = this.dateConverter(this.state.date)
-    // console.log(dateArray)
     // this the value returned from the sunriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
-    // console.log(sunriseTimeArray)
+    
     // this is the value returned from the sunsetTimeConverter
     const sunsetTimeArray = this.sunsetTimeConverter()
-    // console.log(sunsetTimeArray)
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
     const sunsetDateArray = dateArray.concat(formattedSunsetArray)
     const sunriseDateArray = dateArray.concat(sunriseTimeArray);
 
-
     const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
     const convertedToSunriseEst = this.timeToEst(sunriseDateArray)
-    
-    // console.log({convertedToSunsetEst});
-    // console.log({convertedToSunriseEst});
 
     const sunsetDateArrayFinal = [...sunsetDateArray]
     sunsetDateArrayFinal[3] = convertedToSunsetEst;
-    // console.log({sunsetDateArrayFinal});
 
     const sunriseDateArrayFinal = [...sunriseDateArray]
     sunriseDateArrayFinal[3] = convertedToSunriseEst;
-    // console.log({sunriseDateArrayFinal});
 
     const sunsetDateObject = new Date(...sunsetDateArrayFinal);
-    console.log({sunsetDateObject})
 
     const sunriseDateObject = new Date(...sunriseDateArrayFinal)
-    console.log({sunriseDateObject})
     
     const runDuration = parseInt(this.state.duration);
 
       // set variables for Sunset and Sunrise times
     let morningRun = sunriseDateObject;
     morningRun.setMinutes(morningRun.getMinutes()-runDuration)
-    console.log(morningRun)
 
     let nightRun = sunsetDateObject;
     nightRun.setMinutes(nightRun.getMinutes()-runDuration)
 
     const morningRunString = morningRun.toTimeString()
-    console.log(morningRunString);
 
     const nightRunString = nightRun.toTimeString()
-    console.log(nightRunString);
 
     const finalMorningString = morningRunString.slice(0,8)
-    console.log(finalMorningString);
 
     const finalNightString = nightRunString.slice(0,8)
 
-    console.log(finalNightString);
-
-      
     const userRun = this.state.beforeSunrise ? finalMorningString : finalNightString
-    
-    
 
-
-// mapping to the page // 
+// setting state with new string
       this.setState({
         userTime: userRun
       })
-      
     }
 
   render() {
@@ -221,6 +193,7 @@ class App extends Component {
       <main>
         <h1>Fun Run</h1>
         <section className="formSection">
+          <div className="wrapper">
           <Form className="form"
             handleSubmit={this.handleSubmit}
             handleSunrise={this.handleSunrise}
@@ -230,6 +203,7 @@ class App extends Component {
             duration={this.state.duration}
             beforeSunrise={this.state.beforeSunrise}
             />
+          </div>
         </section>
         <section id="results">
           <Usertime userTime={this.state.userTime}/>
