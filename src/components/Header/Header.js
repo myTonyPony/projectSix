@@ -21,7 +21,7 @@ class Header extends Component {
                             <p> You want to experience this on your run! Let us twilight you: click on "go run!" above.</p>
                         </div>
                     </div>
-                    <a href="#form" className="goRun" onClick={this.clicked}>go run!</a>
+                    <a href="#form" className="goRun btn" onClick={this.clicked}>go run!</a>
                 </div>
             </header>
         );

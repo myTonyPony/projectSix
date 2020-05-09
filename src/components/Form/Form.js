@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../styles/variable.scss'
 import './form.scss'
 
 
@@ -47,7 +48,7 @@ import './form.scss'
                       <option value="45">45 mins</option>
                       <option value="60">60 mins</option>
                     </select>
-                    <button type="submit" className="submit">twilight me</button> 
+                    <button type="submit" className="btn submit">twilight me</button> 
                 </div>
               </form>
             );

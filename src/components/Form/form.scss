@@ -1,5 +1,13 @@
+$red: #D66761;
+$green: #B8E070;
+$yellow: #FFFE93;
+$darkBlue: #7A918D;
+$lightBlue: #93B1A7;
+$white: #FAFAFA;
+$black: #373737;
+
 .formSection {
-  background-color: #FFFE93;
+  background-color: $lightBlue;
   height: 100vh;
 }
 
@@ -88,25 +96,12 @@ form {
     margin: 0 auto;
     margin-bottom: 30px;
   } 
-  button.submit {
-    width: 200px;
+  .submit {
     margin: 0 auto;
     margin-top: 60px;
-    background-color: transparent;
-    border: 3px solid #D66761;
-    border-radius: 10px;
     font-family: 'Roboto';
     font-size: 30px;
-    padding: 10px;
-    background-color: #B8E070;
-    transition: 0.3s;
-    text-decoration: none;
-    text-align: center;
-    color: black;
-    &:hover,
-    &:focus {
-      background-color: #D66761;
     }
-  }
+  
 }
 
