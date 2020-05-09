@@ -7,7 +7,7 @@ $white: #FAFAFA;
 $black: #373737;
 
 .formSection {
-  background-color: $lightBlue;
+  background-color: #36485A;
   height: 100vh;
 }
 
@@ -16,10 +16,14 @@ form {
   height: auto;
   width: 50%;
   margin: 0 auto;
+  color: white;
   h3 {
     text-align: center;
-    font-size: 40px;
-    margin-bottom: 100px;
+    font-size: 50px;
+    margin-bottom: 70px;
+    color: $white;
+    letter-spacing: 2px;
+    text-shadow: 0 0 0.2rem;
   }
   .formParent {
     display: flex;
@@ -28,40 +32,42 @@ form {
   .radioParent {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
   .dateLabel {
     margin: 10px;
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .dateParent {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
   input[type="date"] {
     width: auto;
-    font-size: 25px;
+    font-size: 20px;
     text-transform: uppercase;
     border: none;
-    border: 3px solid #D66761;
+    border: 2px solid $white;
     margin-left: 10px;
     margin-right: 10px;
-    padding: 10px;
+    padding: 15px 25px;
+    background-color: #36485A;
+    color: $white;
   }
   .radioParent label {
-    margin: 20px;
-    padding: 10px;
-    font-size: 17px;
-    height: 45px;
+    margin: 40px;
+    padding: 15px 25px;
+    font-size: 20px;
     display: flex;
     width: auto;
     justify-content: center;
     align-items: center;
-    border: 3px solid #D66761;
+    border: 2px solid $white;
+    background-color: transparent;
   }  
 
 // The radio buttons were set to position absolute and off the page so that the meter could be adjusted through the labels
@@ -72,7 +78,9 @@ form {
     top: 393px;
     &:focus+label,
     &:checked+label {
-      background-color: #B8E070;
+      background-color: $green;
+      border: 2px solid $red;
+      color: $black;
     }
   }
   select {
@@ -80,7 +88,7 @@ form {
     font-size: 2rem;
     width: 300px;
     padding: 1rem;
-    border: 3px solid #D66761;
+    border: 2px solid white;
     text-align: center;
     margin-bottom: 10px;
     -moz-appearance: none;
@@ -88,23 +96,24 @@ form {
     background-repeat: no-repeat;
     background-position: right 0.7rem top 50%, 0 0;
     background-size: 3rem;
-    background-color: white;
+    background-color: transparent;
     margin: 0 auto;
     margin-bottom: 30px;
+    color: white;
   } 
   button.submit {
-    width: 200px;
+    width: 230px;
     margin: 0 auto;
     margin-top: 60px;
     background-color: transparent;
-    border: 3px solid #D66761;
+    border: 2px solid $white;
     font-size: 30px;
-    padding: 10px;
-    background-color: #B8E070;
+    padding: 15px 25px;
+    background-color: $red;
     transition: 0.3s;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: $white;
     &:hover,
     &:focus {
       background-color: #D66761;

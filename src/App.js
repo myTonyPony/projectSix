@@ -216,7 +216,6 @@ class App extends Component {
           }
             </div>
           </section>
-         <Usertime userTime={this.state.userTime}/>
       </div>
     )
   }

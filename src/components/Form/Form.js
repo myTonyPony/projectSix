@@ -6,7 +6,7 @@ import './form.scss'
 function Form(props) {
   return (
     <form action="" onSubmit={props.handleSubmit}>
-      <h3>when would you like to run?</h3>
+      <h3>When would you like to run?</h3>
       <div className="formParent">
         <div className="dateParent">
           <label htmlFor="date" className="dateLabel">Date:</label>
@@ -27,7 +27,7 @@ function Form(props) {
             value='true'
             onChange={props.handleSunrise}
           />
-          <label htmlFor="beforeSunrise">before sunrise</label>
+          <label htmlFor="beforeSunrise">Before Sunrise</label>
 
           <input
             type="radio"
@@ -37,17 +37,17 @@ function Form(props) {
             onChange={props.handleSunrise}
             required
           />
-          <label htmlFor="beforeSunset">before sunset</label>
+          <label htmlFor="beforeSunset">Before Sunset</label>
         </div>
 
         <select onChange={props.handleDuration} value={props.duration} required>
-          <option value="">run duration</option>
-          <option value="15">15 mins</option>
-          <option value="30">30 mins</option>
-          <option value="45">45 mins</option>
-          <option value="60">60 mins</option>
+          <option value="">Run Duration</option>
+          <option value="15">15 Minutes</option>
+          <option value="30">30 Minutes</option>
+          <option value="45">45 Minutes</option>
+          <option value="60">60 Minutes</option>
         </select>
-        <button type="submit" className="submit" className="submit btn">twilight me</button>
+        <button type="submit" className="submit" className="submit btn">Twilight Me</button>
       </div>
     </form>
   );

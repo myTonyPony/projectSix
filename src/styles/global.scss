@@ -52,13 +52,10 @@ img {
   padding: 10px 0;
   font-size: 2.5rem;
   width: 200px;
-  border: 5px solid $black;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: $white;
   text-transform: capitalize;
-  background-color: $yellow;
-  color: $red;
   transition:  all ease 0.4s;
 
   &:hover,
