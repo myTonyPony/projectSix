@@ -6,7 +6,6 @@ import Header from './components/Header/Header'
 import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
-//Sass
 import './styles/App.scss'
 
 // First, we get the date for the user of when they would like to run.
