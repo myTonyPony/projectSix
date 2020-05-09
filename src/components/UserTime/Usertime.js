@@ -6,8 +6,8 @@ const Usertime = (props) => {
   return (
     <section className="resultsSectionMorning">
       <div className="container resultsInfo">
-        <p className="resultsBlurb">Morning person eh? Here is your morning run</p>
         <h3 className="results">{props.userTime}</h3>
+        <button className="reset" onClick={props.resetPage}><i class="fas fa-sync-alt" aria-hidden="true" title="refresh page"></i></button>
       </div>
     </section>
   );

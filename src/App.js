@@ -145,6 +145,10 @@ class App extends Component {
     }
   }
 
+  resetPage = () => {
+    window.location.reload()
+  }
+
   // creates user run
   createRun = () => {
     // this is the value returned from timeConverter
@@ -212,8 +216,10 @@ class App extends Component {
             duration={this.state.duration}
             beforeSunrise={this.state.beforeSunrise}
             />
-              : <Usertime userTime={this.state.userTime} />
-          }
+              : <Usertime 
+              userTime={this.state.userTime}
+              resetPage={this.resetPage} />
+            }
             </div>
           </section>
       </div>
