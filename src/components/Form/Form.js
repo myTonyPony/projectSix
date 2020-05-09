@@ -48,7 +48,7 @@ import './form.scss'
                       <option value="45">45 mins</option>
                       <option value="60">60 mins</option>
                     </select>
-                    <button type="submit" className="btn submit">twilight me</button> 
+                    <a href="#results" type="submit" className="btn submit">twilight me</a> 
                 </div>
               </form>
             );
