@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 // import components
+import Header from './components/Header/Header'
 import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
@@ -136,7 +137,6 @@ class App extends Component {
     } else {
       return easternTime[3] + 20
     } 
-    // we want to take out the value easternTime[3] and return it using splice or slice // google ways how to change a single value in an array 
   }
 
   // create array with final time strings
@@ -146,13 +146,10 @@ class App extends Component {
   createRun = () => {
     // this is the value returned from timeConverter
     const dateArray = this.dateConverter(this.state.date)
-    // console.log(dateArray)
     // this the value returned from the sunriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
-    // console.log(sunriseTimeArray)
     // this is the value returned from the sunsetTimeConverter
     const sunsetTimeArray = this.sunsetTimeConverter()
-    // console.log(sunsetTimeArray)
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
@@ -163,16 +160,12 @@ class App extends Component {
     const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
     const convertedToSunriseEst = this.timeToEst(sunriseDateArray)
     
-    // console.log({convertedToSunsetEst});
-    // console.log({convertedToSunriseEst});
 
     const sunsetDateArrayFinal = [...sunsetDateArray]
     sunsetDateArrayFinal[3] = convertedToSunsetEst;
-    // console.log({sunsetDateArrayFinal});
 
     const sunriseDateArrayFinal = [...sunriseDateArray]
     sunriseDateArrayFinal[3] = convertedToSunriseEst;
-    // console.log({sunriseDateArrayFinal});
 
     const sunsetDateObject = new Date(...sunsetDateArrayFinal);
     console.log({sunsetDateObject})
@@ -218,19 +211,24 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <h1>Fun Run</h1>
-        <Form 
-          handleSubmit={this.handleSubmit}
-          handleSunrise={this.handleSunrise}
-          handleDate={this.handleDate}
-          date={this.state.date}
-          handleDuration={this.handleDuration}
-          duration={this.state.duration}
-          beforeSunrise={this.state.beforeSunrise}
-          />
-        <Usertime userTime={this.state.userTime}/>
-      </main>
+      <div className="container">
+
+        <Header />
+      
+        <main>
+          <h1>Fun Run</h1>
+          <Form 
+            handleSubmit={this.handleSubmit}
+            handleSunrise={this.handleSunrise}
+            handleDate={this.handleDate}
+            date={this.state.date}
+            handleDuration={this.handleDuration}
+            duration={this.state.duration}
+            beforeSunrise={this.state.beforeSunrise}
+            />
+          <Usertime userTime={this.state.userTime}/>
+        </main>
+      </div>
     )
   }
 }
