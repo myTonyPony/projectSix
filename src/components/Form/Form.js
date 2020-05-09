@@ -9,7 +9,6 @@ function Form(props) {
       <h3>When would you like to run?</h3>
       <div className="formParent">
         <div className="dateParent">
-          <label htmlFor="date" className="dateLabel">Date:</label>
           <input
             type="date"
             name="date"
