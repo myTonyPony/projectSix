@@ -1,5 +1,4 @@
 import React from "react";
-import "./usertime.scss"
 
 const Usertime = (props) => {
   return (
