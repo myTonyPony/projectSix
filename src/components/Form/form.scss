@@ -55,8 +55,8 @@ form {
     margin-left: 10px;
     margin-right: 10px;
     padding: 15px 25px;
-    background-color: #36485A;
-    color: $white;
+    background-color: $lightBlue;
+    color: $black;
   }
   .radioParent label {
     margin: 40px;
@@ -67,7 +67,8 @@ form {
     justify-content: center;
     align-items: center;
     border: 2px solid $white;
-    background-color: transparent;
+    background-color: $lightBlue;
+    color: $black;
   }  
 
 // The radio buttons were set to position absolute and off the page so that the meter could be adjusted through the labels
@@ -78,8 +79,7 @@ form {
     top: 393px;
     &:focus+label,
     &:checked+label {
-      background-color: $green;
-      border: 2px solid $red;
+      background-color: $yellow;
       color: $black;
     }
   }
@@ -96,10 +96,10 @@ form {
     background-repeat: no-repeat;
     background-position: right 0.7rem top 50%, 0 0;
     background-size: 3rem;
-    background-color: transparent;
+    background-color: $lightBlue;
     margin: 0 auto;
     margin-bottom: 30px;
-    color: white;
+    color: $black;
   } 
   button.submit {
     width: 230px;
@@ -116,8 +116,8 @@ form {
     color: $white;
     &:hover,
     &:focus {
-      background-color: #D66761;
-      color: $black;
+      color: $yellow;
+      background-color: $black;
     }
   }
 }
