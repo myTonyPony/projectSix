@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 // import components
+import Header from './components/Header/Header'
 import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
@@ -142,9 +143,6 @@ class App extends Component {
     // this the value returned from the sunriseTimeConverter
     const sunriseTimeArray = this.sunriseTimeConverter()
     
-    // this is the value returned from the sunsetTimeConverter
-    const sunsetTimeArray = this.sunsetTimeConverter()
-    
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
     const sunsetDateArray = dateArray.concat(formattedSunsetArray)
@@ -190,6 +188,13 @@ class App extends Component {
 
   render() {
     return (
+      <div className="container">
+
+        <Header />
+      
+        <main>
+          <h1>Fun Run</h1>
+          <Form 
       <main>
         <h1>Fun Run</h1>
         <section className="formSection">
@@ -203,12 +208,11 @@ class App extends Component {
             duration={this.state.duration}
             beforeSunrise={this.state.beforeSunrise}
             />
-          </div>
-        </section>
-        <section id="results">
-          <Usertime userTime={this.state.userTime}/>
-        </section>
-      </main>
+          </section>
+         <Usertime userTime={this.state.userTime}/>
+        </main>
+      </div>
+
     )
   }
 }

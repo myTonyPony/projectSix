@@ -1,0 +1,87 @@
+header {
+  height: 100vh;
+  background-color: #b8e070;
+}
+
+.headerContainer {
+  position: relative;
+  background: url("../../assets/tomasz-wozniak-V62UrdknDCA-unsplash.jpg") 50%
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 10vh;
+}
+
+.headerContent,
+.chevronDown,
+.infoButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContent h1 {
+  padding: 80px 40px;
+  font-size: 6rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.chevronDown,
+.infoButton {
+  padding: 240px 0 0 0;
+}
+.fa-chevron-down,
+.fa-info {
+  font-size: 3.5rem;
+}
+
+.goRun {
+  padding: 10px;
+  font-size: 1.5rem;
+  height: 45px;
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transition: ease 0.4s;
+    background-color: #fffe93;
+    color: #d66761;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: -80%;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin: 10px 10px;
+  padding: 16px 10px;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+
+.dropdownContent p {
+  padding: 5px 5px;
+}
+
+.dropdown:hover .dropdownContent,
+.dropdown:focus .dropdownContent {
+  display: block;
+  border-radius: 10px;
+  transition: ease 0.6s;
+  background-color: #fffe93;
+  color: #d66761;
+}
