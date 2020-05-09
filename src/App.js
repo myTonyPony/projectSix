@@ -28,6 +28,7 @@ class App extends Component {
       userTime:[],
       morningRun: '',
       nightRun: '',
+      showForm: true
     }
   }
 
@@ -50,9 +51,16 @@ class App extends Component {
     })
   }
 
+  // to remove and show form after selection
+  toggleForm = () => {
+    this.setState({
+      showForm: !this.state.showForm
+    })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.toggleForm();
     axios({
       url: `https://api.sunrise-sunset.org/json`,
       method: `GET`,
@@ -193,7 +201,8 @@ class App extends Component {
       <div>
         <Header />
         <section className="formSection" id="form">
-          <div>
+          <div>   
+        {this.state.showForm ?
           <Form 
             handleSubmit={this.handleSubmit}
             handleSunrise={this.handleSunrise}
@@ -203,6 +212,8 @@ class App extends Component {
             duration={this.state.duration}
             beforeSunrise={this.state.beforeSunrise}
             />
+              : <Usertime userTime={this.state.userTime} />
+          }
             </div>
           </section>
          <Usertime userTime={this.state.userTime}/>

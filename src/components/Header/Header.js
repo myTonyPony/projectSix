@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './header.scss';
 
 class Header extends Component {
-
-    clicked() {
-        console.log('the button was clicked')
-    }
      
     render() {
         return (
