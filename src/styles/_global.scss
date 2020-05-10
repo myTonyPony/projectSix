@@ -77,6 +77,8 @@ img {
 
 footer {
   display: flex;
+  position: fixed;
+  bottom: 0;
     a {
     text-decoration: none;
     color: $white;
