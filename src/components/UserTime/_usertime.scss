@@ -23,8 +23,8 @@
   align-items: center;
 }
 
-  .resultsNight,
-  .resultsMorning {
+.resultsNight,
+.resultsMorning {
   font-size: 7rem;
   color: #fafafa; 
 }
@@ -40,6 +40,7 @@
 .resultsBlurb {
   color: #fafafa;
   font-size: 2rem;
+  text-align: center;
   text-shadow: 0 0 1rem #000;
   margin-bottom: 1rem;
 }

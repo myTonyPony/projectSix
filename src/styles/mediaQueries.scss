@@ -1,0 +1,44 @@
+//  media queries - 1040px
+
+@media (max-width: 1040px) {
+  .headerContent h1 {
+    font-size: 9rem;
+  }
+}
+
+//  media queries - 930px
+
+@media (max-width: 930px) {
+}
+
+//  media queries - 600px
+
+@media (max-width: 600px) {
+  .headerContent h1 {
+    font-size: 8rem;
+  }
+  form h3 {
+    font-size: 5rem;
+  }
+  .radioParent label {
+    font-size: 1.75rem;
+  }
+}
+
+//  media queries - 557px
+
+@media (max-width: 557px) {
+  .headerContent h1 {
+    font-size: 7rem;
+  }
+  form h3 {
+    font-size: 4rem;
+  }
+  .radioParent label {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+  }
+  select {
+    font-size: 1.25rem;
+  }
+}

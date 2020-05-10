@@ -13,6 +13,8 @@ function Form(props) {
             onChange={props.handleDate}
             value={props.date}
             required
+            min="1980-01-02"
+            max="2040-01-02"
           />
         </div>
         <div className="radioParent">
