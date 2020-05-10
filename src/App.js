@@ -149,9 +149,10 @@ class App extends Component {
 
   // creates user run
   createRun = () => {
-    // this is the value returned from timeConverter
+    // values returned from date converter
     const dateArray = this.dateConverter(this.state.date)
-    // this the value returned from the sunriseTimeConverter
+
+    // values returned from sunrise and sunset time converter
     const sunriseTimeArray = this.sunriseTimeConverter()
     const sunsetTimeArray = this.sunsetTimeConverter()
     
@@ -175,7 +176,7 @@ class App extends Component {
     
     const runDuration = parseInt(this.state.duration);
 
-      // set variables for Sunset and Sunrise times
+    // set variables for Sunset and Sunrise times
     let morningRun = sunriseDateObject;
     morningRun.setMinutes(morningRun.getMinutes()-runDuration)
 
