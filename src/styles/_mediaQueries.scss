@@ -23,6 +23,10 @@
   .radioParent label {
     font-size: 1.75rem;
   }
+
+  form button.submit {
+    font-size: 2rem;
+  }
 }
 
 //  media queries - 557px
@@ -31,14 +35,26 @@
   .headerContent h1 {
     font-size: 7rem;
   }
+  .dropdownContent {
+    bottom: 35%;
+  }
   form h3 {
     font-size: 4rem;
   }
-  .radioParent label {
-    font-size: 1.25rem;
+  form input[type="date"] {
+    font-size: 1.4rem;
+  }
+  form .radioParent label {
+    font-size: 1.5rem;
     padding: 10px 20px;
   }
-  select {
-    font-size: 1.25rem;
+  form select {
+    font-size: 1.5rem;
+    background-size: 2.25rem;
+    width: 175px;
+  }
+  form button.submit {
+    font-size: 1.75rem;
+    width: 185px;
   }
 }
