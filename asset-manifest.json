@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/projectSix/static/css/main.88896493.chunk.css",
+    "main.css": "/projectSix/static/css/main.f2fd7e49.chunk.css",
     "main.js": "/projectSix/static/js/main.1746c67b.chunk.js",
     "main.js.map": "/projectSix/static/js/main.1746c67b.chunk.js.map",
     "runtime-main.js": "/projectSix/static/js/runtime-main.fd111fba.js",
@@ -8,16 +8,16 @@
     "static/js/2.b1712c28.chunk.js": "/projectSix/static/js/2.b1712c28.chunk.js",
     "static/js/2.b1712c28.chunk.js.map": "/projectSix/static/js/2.b1712c28.chunk.js.map",
     "index.html": "/projectSix/index.html",
-    "precache-manifest.8a10a65dd4a5f1f00a77965cdcea9094.js": "/projectSix/precache-manifest.8a10a65dd4a5f1f00a77965cdcea9094.js",
+    "precache-manifest.a9c47b27d587b644377356101c7b9c52.js": "/projectSix/precache-manifest.a9c47b27d587b644377356101c7b9c52.js",
     "service-worker.js": "/projectSix/service-worker.js",
-    "static/css/main.88896493.chunk.css.map": "/projectSix/static/css/main.88896493.chunk.css.map",
+    "static/css/main.f2fd7e49.chunk.css.map": "/projectSix/static/css/main.f2fd7e49.chunk.css.map",
     "static/js/2.b1712c28.chunk.js.LICENSE.txt": "/projectSix/static/js/2.b1712c28.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/projectSix/static/media/swapnil-dwivedi-Xcmfp0gBukI-unsplash.22ef7e89.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.fd111fba.js",
     "static/js/2.b1712c28.chunk.js",
-    "static/css/main.88896493.chunk.css",
+    "static/css/main.f2fd7e49.chunk.css",
     "static/js/main.1746c67b.chunk.js"
   ]
 }
