@@ -1,6 +1,4 @@
 
-//  media queries - 1040px
-
 @media (max-width: 1040px) {
   .headerContent h1 {
     font-size: 9rem;
@@ -11,8 +9,7 @@
 @media (max-width: 720px) {
   h3 {
   font-size: 4.5rem;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 0 10px 0 10px;
   }
   form {
     width: 500px;
@@ -28,8 +25,6 @@
   }
 }
 
-//  media queries - 557px
-
 @media (max-width: 557px) {
   .headerContent h1 {
     font-size: 7rem;
@@ -39,14 +34,12 @@
     font-size: 4.75rem;
   }
 }
-//  media queries - 460px
 
 @media (max-width: 460px) {
   .headerContent h1 {
     font-size: 6rem;
   }
 }
-//  media queries - 360px
 
 @media (max-width: 400px) {
   form {
@@ -58,7 +51,6 @@
       background-size: 25px;
     }
   }
-
 }
 
 @media (max-width: 360px) {

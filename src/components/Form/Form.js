@@ -7,7 +7,7 @@ function Form(props) {
     <form action="" onSubmit={props.handleSubmit}>
       <div className="formParent">
         <div className="dateParent">
-          <label htmlFor="beforeSunrise">Date</label>
+          <label htmlFor="date">Date</label>
           <input
             type="date"
             name="date"
@@ -33,7 +33,7 @@ function Form(props) {
           <option value="45">45 Minutes</option>
           <option value="60">60 Minutes</option>
         </select>
-        <button type="submit" className="submit" className="submit btn">Twilight Me</button>
+        <button type="submit" className="submit btn">Twilight Me</button>
       </div>
     </form>
     </div>
