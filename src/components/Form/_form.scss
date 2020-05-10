@@ -67,9 +67,9 @@ form {
 
 // The radio buttons were set to position absolute and off the page so that the sunrise/sunset could be chosen through the labels
   input[type="radio"] {
-    opacity: 0;
+    opacity: 0.01;
     position: absolute;
-    left: 1000;
+    left: -1000px;
     &:focus + label,
     &:checked + label {
       background-color: $green;
