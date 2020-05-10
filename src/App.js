@@ -62,7 +62,6 @@ class App extends Component {
 
   // Takes the users selections and uses them for the axios call to get thei results. 
   toggleInfo = () => {
-    console.log("toggleInfo")
     this.setState({
       showInfo: !this.state.showInfo
     })
@@ -242,6 +241,7 @@ class App extends Component {
             }
             </div>
           </section>
+        <footer><a href="">© My Tony Pony Productions | In Association with nopat-nofun Studios</a></footer>
       </div>
     )
   }

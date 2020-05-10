@@ -305,6 +305,20 @@ img {
   display: none;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer a {
+  text-decoration: none;
+  margin: 0 auto;
+  color: #fafafa;
+  text-align: center;
+  padding: 10 10px 10px 10px;
+}
+
 header {
   height: 100vh;
   background-image: url("../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg");

@@ -73,3 +73,16 @@ img {
 .hidden {
   display: none;
 }
+
+
+footer {
+  display: flex;
+    a {
+    text-decoration: none;
+    margin: 0 auto;
+    color: $white;
+    text-align: center;
+    padding:10 10px 10px 10px;
+
+  }
+}
