@@ -1,14 +1,18 @@
 header {
   height: 100vh;
+  background-image: url("../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
 }
 
 .headerContainer {
   position: relative;
-  background-image: url('../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerContent,
@@ -16,6 +20,7 @@ header {
 .infoButton {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -25,19 +30,21 @@ header {
   text-align: center;
   text-shadow: 0 0 1rem;
   color: white;
-  margin: 6rem 0;
+  // margin: 6rem 0;
 }
 
-.infoButton {
-  padding: 320px 0 0 0;
-}
+// .infoButton {
+//   padding: 20px 0 0 0;
+// }
 
 .fa-info-circle {
   font-size: 5rem;
   color: $white;
   margin-bottom: 1px;
 }
-
+.runButton {
+  margin: 0 0 100px 0;
+}
 .goRun {
   display: flex;
   margin: 0 auto;
@@ -56,10 +63,10 @@ header {
 .dropdownContent {
   display: none;
   position: absolute;
-  bottom: 50%;
+  bottom: 150%;
   border-radius: 10px;
   background-color: $white;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 16px 10px;

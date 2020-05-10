@@ -34,9 +34,7 @@
   .headerContent h1 {
     font-size: 7rem;
   }
-  .dropdownContent {
-    bottom: 35%;
-  }
+
   form h3 {
     font-size: 4.75rem;
   }
@@ -46,15 +44,6 @@
 @media (max-width: 460px) {
   .headerContent h1 {
     font-size: 6rem;
-  }
-  form {
-    width: 350px;
-    h3 {
-      font-size: 4rem;
-    }
-    select {
-      width: 250px;
-    }
   }
 }
 //  media queries - 360px
@@ -74,8 +63,5 @@
 @media (max-width: 360px) {
   .headerContent h1 {
     font-size: 5rem;
-  }
-  form h3 {
-    font-size: 3rem;
   }
 }
