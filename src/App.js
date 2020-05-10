@@ -6,7 +6,10 @@ import Header from './components/Header/Header'
 import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
-import './styles/App.scss'
+//Sass
+import './styles/variable.scss'
+import './styles/setup.scss'
+import './styles/global.scss'
 
 // First, we get the date for the user of when they would like to run.
 // Then, we ask if they'd like to hit the sunrise or the sunset. 
@@ -23,8 +26,6 @@ class App extends Component {
       date: '',
       duration: 0,
       userTime:[],
-      morningRun: '',
-      nightRun: '',
       showForm: true
     }
   }
@@ -143,7 +144,7 @@ class App extends Component {
   }
 
   resetPage = () => {
-    window.location.reload()
+    Location.reload()
   }
 
   // creates user run
