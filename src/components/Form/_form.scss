@@ -5,11 +5,11 @@
 
 h3 {
     text-align: center;
-    font-size: 50px;
+    font-size: 5rem;
     margin-bottom: 40px;
     color: $white;
     letter-spacing: 2px;
-    text-shadow: 0 0 0.2rem;
+    text-shadow: 0 0 2px;
     padding-top: 40px;
   }
 
@@ -50,7 +50,8 @@ form {
     margin-bottom: 5%;
   }
   input[type="date"] {
-    width: auto;
+    width: 300px;
+    text-align: center;
     font-size: 2rem;
     text-transform: uppercase;
     border: none;
@@ -61,24 +62,32 @@ form {
     background-color: $lightBlue;
     color: $black;
     border-radius: 10px;
+    &:active,
+    &:focus {
+      border-color: $green;
+    }
   }
   select {
     color: black;
     font-size: 2rem;
     width: 300px;
-    padding: 1rem;
+    padding: 10px;
     border: 2px solid $red;
     text-align: center;
     -moz-appearance: none;
     background: url("../../assets/noun_Arrow\ Down_91506.png");
     background-repeat: no-repeat;
-    background-position: right 0.7rem top 50%, 0 0;
-    background-size: 3rem;
+    background-position: right 7px top 50%, 0 0;
+    background-size: 30px;
     background-color: $lightBlue;
     margin: 0 auto;
     margin-bottom: 5%;
     color: $black;
     border-radius: 10px;
+    &:active,
+    &:focus {
+      border-color: $green;
+    }
   }
   button.submit {
     width: 230px;
@@ -86,7 +95,7 @@ form {
     margin-top: 2%;
     background-color: transparent;
     border: 2px solid $white;
-    font-size: 30px;
+    font-size: 3rem;
     padding: 15px 25px;
     background-color: $red;
     transition: 0.3s;

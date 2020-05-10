@@ -303,15 +303,34 @@ img {
 
 header {
   height: 100vh;
-}
-
-.headerContainer {
-  position: relative;
   background-image: url("../../assets/swapnil-dwivedi-Xcmfp0gBukI-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hederInfo {
+  width: 100%;
+}
+
+.headerContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .headerContent,
@@ -324,6 +343,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -335,17 +357,16 @@ header {
   text-align: center;
   text-shadow: 0 0 1rem;
   color: white;
-  margin: 6rem 0;
-}
-
-.infoButton {
-  padding: 320px 0 0 0;
 }
 
 .fa-info-circle {
   font-size: 5rem;
   color: #FAFAFA;
   margin-bottom: 1px;
+}
+
+.runButton {
+  margin: 0 0 100px 0;
 }
 
 .goRun {
@@ -372,16 +393,17 @@ header {
 .dropdownContent {
   display: none;
   position: absolute;
-  bottom: 50%;
+  bottom: 110%;
   border-radius: 10px;
   background-color: #FAFAFA;
-  width: 50%;
-  margin: 0 auto;
+  margin: 0 5%;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 16px 10px;
   z-index: 1;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .dropdownContent p {
@@ -405,11 +427,11 @@ header {
 
 h3 {
   text-align: center;
-  font-size: 50px;
+  font-size: 5rem;
   margin-bottom: 40px;
   color: #FAFAFA;
   letter-spacing: 2px;
-  text-shadow: 0 0 0.2rem;
+  text-shadow: 0 0 2px;
   padding-top: 40px;
 }
 
@@ -482,7 +504,8 @@ form .dateParent {
 }
 
 form input[type="date"] {
-  width: auto;
+  width: 300px;
+  text-align: center;
   font-size: 2rem;
   text-transform: uppercase;
   border: none;
@@ -495,23 +518,31 @@ form input[type="date"] {
   border-radius: 10px;
 }
 
+form input[type="date"]:active, form input[type="date"]:focus {
+  border-color: #B8E070;
+}
+
 form select {
   color: black;
   font-size: 2rem;
   width: 300px;
-  padding: 1rem;
+  padding: 10px;
   border: 2px solid #D66761;
   text-align: center;
   -moz-appearance: none;
   background: url("../../assets/noun_Arrow Down_91506.png");
   background-repeat: no-repeat;
-  background-position: right 0.7rem top 50%, 0 0;
-  background-size: 3rem;
+  background-position: right 7px top 50%, 0 0;
+  background-size: 30px;
   background-color: #93B1A7;
   margin: 0 auto;
   margin-bottom: 5%;
   color: #373737;
   border-radius: 10px;
+}
+
+form select:active, form select:focus {
+  border-color: #B8E070;
 }
 
 form button.submit {
@@ -520,7 +551,7 @@ form button.submit {
   margin-top: 2%;
   background-color: transparent;
   border: 2px solid #FAFAFA;
-  font-size: 30px;
+  font-size: 3rem;
   padding: 15px 25px;
   background-color: #D66761;
   -webkit-transition: 0.3s;
@@ -583,28 +614,43 @@ form p.select {
 }
 
 .resultsNight {
-  text-shadow: 0 0 1rem;
+  text-shadow: 0 0 10px;
 }
 
 .resultsMorning {
-  text-shadow: 0 0 1rem #000;
+  text-shadow: 0 0 10px #000;
 }
 
 .resultsBlurb {
   color: #fafafa;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
-  text-shadow: 0 0 1rem #000;
-  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #000;
+  margin-bottom: 10px;
+  text-shadow: 0 0 1px;
 }
 
 .reset {
   background-color: transparent;
   border: none;
-  font-size: 3rem;
+  font-size: 5rem;
   color: #fafafa;
-  text-shadow: 0 0 1rem #000;
+  text-shadow: 0 0 10px #000;
   margin-top: 30px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.reset:hover, .reset:focus {
+  color: #B8E070;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.reset:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #FFFE93;
 }
 
 @media (max-width: 1040px) {
@@ -637,9 +683,6 @@ form p.select {
   .headerContent h1 {
     font-size: 7rem;
   }
-  .dropdownContent {
-    bottom: 35%;
-  }
   form h3 {
     font-size: 4.75rem;
   }
@@ -649,34 +692,23 @@ form p.select {
   .headerContent h1 {
     font-size: 6rem;
   }
-  form {
-    width: 350px;
-  }
-  form h3 {
-    font-size: 4rem;
-  }
-  form select {
-    width: 250px;
-  }
 }
 
 @media (max-width: 400px) {
   form {
     width: 270px;
   }
-  form select {
+  form select,
+  form input[type="date"] {
     width: 211px;
     font-size: 1.8rem;
-    background-size: 2.5rem;
+    background-size: 25px;
   }
 }
 
 @media (max-width: 360px) {
   .headerContent h1 {
     font-size: 5rem;
-  }
-  form h3 {
-    font-size: 3rem;
   }
 }
 /*# sourceMappingURL=App.css.map */

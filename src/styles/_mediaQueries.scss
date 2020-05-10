@@ -51,10 +51,11 @@
 @media (max-width: 400px) {
   form {
     width: 270px;
-    select {
+    select,
+    input[type="date"] {
       width: 211px;
       font-size: 1.8rem;
-      background-size: 2.5rem;
+      background-size: 25px;
     }
   }
 

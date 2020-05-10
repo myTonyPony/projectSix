@@ -30,27 +30,28 @@
 }
 
 .resultsNight {
-  text-shadow: 0 0 1rem;
+  text-shadow: 0 0 10px;
 }
 
 .resultsMorning {
-  text-shadow: 0 0 1rem #000;
+  text-shadow: 0 0 10px #000;
 }
 
 .resultsBlurb {
   color: #fafafa;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
-  text-shadow: 0 0 1rem #000;
-  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #000;
+  margin-bottom: 10px;
+  text-shadow: 0 0 1px;
 }
 
 .reset {
   background-color: transparent;
   border: none;
-  font-size: 3rem;
+  font-size: 5rem;
   color: #fafafa;
-  text-shadow: 0 0 1rem #000;
+  text-shadow: 0 0 10px #000;
   margin-top: 30px;
   transition: all 1s;
 
@@ -62,6 +63,7 @@
 
   &:active {
     transform: scale(1.1);
+    color: $yellow;
   }
 }
 
