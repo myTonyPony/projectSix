@@ -39,6 +39,36 @@
     bottom: 35%;
   }
   form h3 {
+    font-size: 4.75rem;
+  }
+  form input[type="date"] {
+    font-size: 1.8rem;
+  }
+  form .radioParent label {
+    font-size: 1.75rem;
+    padding: 12px 23px;
+    margin: 30px;
+  }
+  form select {
+    font-size: 2rem;
+    background-size: 2.75rem;
+    width: 190px;
+  }
+  form button.submit {
+    font-size: 2rem;
+    width: 195px;
+  }
+}
+//  media queries - 460px
+
+@media (max-width: 460px) {
+  .headerContent h1 {
+    font-size: 6rem;
+  }
+  .dropdownContent {
+    bottom: 35%;
+  }
+  form h3 {
     font-size: 4rem;
   }
   form input[type="date"] {
@@ -47,14 +77,45 @@
   form .radioParent label {
     font-size: 1.5rem;
     padding: 10px 20px;
+    margin: 25px;
   }
   form select {
-    font-size: 1.5rem;
-    background-size: 2.25rem;
-    width: 175px;
+    font-size: 1.75rem;
+    background-size: 2.5rem;
+    width: 180px;
   }
   form button.submit {
     font-size: 1.75rem;
     width: 185px;
+  }
+}
+//  media queries - 360px
+
+@media (max-width: 360px) {
+  .headerContent h1 {
+    font-size: 5rem;
+  }
+  .dropdownContent {
+    bottom: 20%;
+  }
+  form h3 {
+    font-size: 3rem;
+  }
+  form input[type="date"] {
+    font-size: 1.15rem;
+  }
+  form .radioParent label {
+    font-size: 1.25rem;
+    padding: 10px 10px;
+    margin: 20px;
+  }
+  form select {
+    font-size: 1.25rem;
+    background-size: 2rem;
+    width: 165px;
+  }
+  form button.submit {
+    font-size: 1.5rem;
+    width: 165px;
   }
 }
