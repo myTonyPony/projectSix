@@ -20,7 +20,7 @@ class Header extends Component {
                             <a href="#form" className="goRun btn" onClick={this.clicked}>go run!</a>
                         </div>
                     </div>
-                    </div>
+                </div>
             </header>
         );
     }

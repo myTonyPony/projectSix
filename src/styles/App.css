@@ -373,8 +373,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto;
-  margin-top: 22px;
+  margin: 22px auto 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -446,17 +445,15 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0 50px 0;
   height: auto;
   width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   color: #373737;
   background-color: #93B1A7;
   border-radius: 20px;
   -webkit-box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
 }
 
 form .formParent {
@@ -478,10 +475,7 @@ form .radioParent {
           justify-content: center;
 }
 
-form p.radio {
-  margin: 0 auto;
-}
-
+form p.radio,
 form p.select {
   margin: 0 auto;
 }
@@ -513,7 +507,7 @@ form input[type="date"] {
   margin-left: 10px;
   margin-right: 10px;
   padding: 1rem;
-  background-color: #93B1A7;
+  background-color: #FAFAFA;
   color: #373737;
   border-radius: 10px;
 }
@@ -534,7 +528,7 @@ form select {
   background-repeat: no-repeat;
   background-position: right 7px top 50%, 0 0;
   background-size: 30px;
-  background-color: #93B1A7;
+  background-color: #FAFAFA;
   margin: 0 auto;
   margin-bottom: 5%;
   color: #373737;
@@ -547,15 +541,11 @@ form select:active, form select:focus {
 
 form button.submit {
   width: 230px;
-  margin: 0 auto;
-  margin-top: 2%;
-  background-color: transparent;
+  margin: 2% auto 0 auto;
   border: 2px solid #FAFAFA;
   font-size: 3rem;
   padding: 15px 25px;
   background-color: #D66761;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   text-decoration: none;
   text-align: center;
   color: #FAFAFA;
@@ -662,8 +652,7 @@ form p.select {
 @media (max-width: 720px) {
   h3 {
     font-size: 4.5rem;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
   }
   form {
     width: 500px;
