@@ -241,7 +241,7 @@ class App extends Component {
             }
             </div>
           </section>
-        <footer><a href="">© My Tony Pony Productions | In Association with nopat-nofun Studios</a></footer>
+        <footer><a href="https://www.flickr.com/photos/188212026@N04/49880560226/in/dateposted-public/">© My Tony Pony Productions | In Association with nopat-nofun Studios</a></footer>
       </div>
     )
   }
