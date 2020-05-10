@@ -11,7 +11,7 @@ function Header(props) {
                   <div className="infoButton">
                       <button onClick={props.toggleClick}><i className="fas fa-info-circle"></i></button>
                   </div>
-                  <div className={props.toggleClick ?  "hidden" : "dropdownContent"}>
+                  <div className={props.toggleInfo ? "dropdownContent" : "hidden" }>
                       <p>You can define twilight simply as the time of day between daylight and darkness, whether that's after sunset, or before sunrise. It's a time when the light from the sky appears diffused and often pinkish.</p>
                       <p> You want to experience this on your run! Let us twilight you: click on "go run!" below.</p>
                   </div>

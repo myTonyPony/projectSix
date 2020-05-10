@@ -210,6 +210,7 @@ class App extends Component {
       <div>
         <Header
           toggleClick={this.toggleInfo}
+          toggleInfo={this.state.showInfo}
         />
         <section className="formSection" id="form">
           <div>   
