@@ -7,9 +7,7 @@ import Form from './components/Form/Form';
 import Usertime from './components/UserTime/Usertime';
 
 //Sass
-import './styles/variable.scss'
-import './styles/setup.scss'
-import './styles/global.scss'
+import './styles/App.scss'
 
 // First, we get the date for the user of when they would like to run.
 // Then, we ask if they'd like to hit the sunrise or the sunset. 
@@ -93,7 +91,7 @@ class App extends Component {
     const sunriseStringOne = this.state.apiTimes.sunrise.split(':', 3)
     const seconds = sunriseStringOne[2].split(" ", 1)
     const sunriseStringThree = sunriseStringOne.pop()
-    // concat the two arrays together with out AM/PM values
+    // concat the two arrays together without AM/PM values
     const finalSunriseString = sunriseStringOne.concat(seconds)
     // convert array into number values
     const finalSunriseNumber = finalSunriseString.map((sRiseTimes) => {
@@ -108,7 +106,7 @@ class App extends Component {
     const sunsetStringOne = this.state.apiTimes.sunset.split(':', 3)
     const secondsTwo = sunsetStringOne[2].split(" ", 1)
     const sunsetStringThree = sunsetStringOne.pop()
-    // concat the two arrays together with out AM/PM values
+    // concat the two arrays together without AM/PM values
     const finalSunsetString = sunsetStringOne.concat(secondsTwo)
     // convert array into number values
     const finalSunsetNumber = finalSunsetString.map((sunsetTimes) => {
@@ -144,7 +142,7 @@ class App extends Component {
   }
 
   resetPage = () => {
-    Location.reload()
+    window.location.reload()
   }
 
   // creates user run
@@ -176,7 +174,7 @@ class App extends Component {
     
     const runDuration = parseInt(this.state.duration);
 
-    // set variables for Sunset and Sunrise times
+    // variables for Sunset and Sunrise times
     let morningRun = sunriseDateObject;
     morningRun.setMinutes(morningRun.getMinutes()-runDuration)
 
