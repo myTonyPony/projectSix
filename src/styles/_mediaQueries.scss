@@ -1,31 +1,30 @@
+
 //  media queries - 1040px
 
 @media (max-width: 1040px) {
   .headerContent h1 {
     font-size: 9rem;
   }
+  
 }
 
-//  media queries - 930px
-
-@media (max-width: 930px) {
+@media (max-width: 720px) {
+  h3 {
+  font-size: 4.5rem;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+  form {
+    width: 500px;
+  }
 }
-
-//  media queries - 600px
 
 @media (max-width: 600px) {
   .headerContent h1 {
     font-size: 8rem;
   }
-  form h3 {
-    font-size: 5rem;
-  }
-  .radioParent label {
-    font-size: 1.75rem;
-  }
-
-  form button.submit {
-    font-size: 2rem;
+  form {
+    width: 400px;
   }
 }
 
@@ -39,23 +38,6 @@
   form h3 {
     font-size: 4.75rem;
   }
-  form input[type="date"] {
-    font-size: 1.8rem;
-  }
-  form .radioParent label {
-    font-size: 1.75rem;
-    padding: 12px 23px;
-    margin: 30px;
-  }
-  form select {
-    font-size: 2rem;
-    background-size: 2.75rem;
-    width: 190px;
-  }
-  form button.submit {
-    font-size: 2rem;
-    width: 195px;
-  }
 }
 //  media queries - 460px
 
@@ -63,53 +45,23 @@
   .headerContent h1 {
     font-size: 6rem;
   }
-
-  form h3 {
-    font-size: 4rem;
-  }
-  form input[type="date"] {
-    font-size: 1.4rem;
-  }
-  form .radioParent label {
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    margin: 25px;
-  }
-  form select {
-    font-size: 1.75rem;
-    background-size: 2.5rem;
-    width: 180px;
-  }
-  form button.submit {
-    font-size: 1.75rem;
-    width: 185px;
-  }
 }
 //  media queries - 360px
+
+@media (max-width: 400px) {
+  form {
+    width: 270px;
+    select {
+      width: 211px;
+      font-size: 1.8rem;
+      background-size: 2.5rem;
+    }
+  }
+
+}
 
 @media (max-width: 360px) {
   .headerContent h1 {
     font-size: 5rem;
-  }
-
-  form h3 {
-    font-size: 3rem;
-  }
-  form input[type="date"] {
-    font-size: 1.15rem;
-  }
-  form .radioParent label {
-    font-size: 1.25rem;
-    padding: 10px 10px;
-    margin: 20px;
-  }
-  form select {
-    font-size: 1.25rem;
-    background-size: 2rem;
-    width: 165px;
-  }
-  form button.submit {
-    font-size: 1.5rem;
-    width: 165px;
   }
 }
