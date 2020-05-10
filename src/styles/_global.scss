@@ -1,10 +1,10 @@
 /* global settings */
-$red: #D66761;
-$green: #B8E070;
-$yellow: #FFFE93;
-$darkBlue: #7A918D;
-$lightBlue: #93B1A7;
-$white: #FAFAFA;
+$red: #d66761;
+$green: #b8e070;
+$yellow: #fffe93;
+$darkBlue: #7a918d;
+$lightBlue: #93b1a7;
+$white: #fafafa;
 $black: #373737;
 
 html {
@@ -57,7 +57,7 @@ img {
   text-decoration: none;
   color: $white;
   text-transform: capitalize;
-  transition:  all ease 0.4s;
+  transition: all ease 0.4s;
 
   &:hover,
   &:focus {
@@ -66,6 +66,10 @@ img {
   }
 
   &:active {
-    transform: scale(.9);
+    transform: scale(0.9);
   }
+}
+
+.hidden {
+  display: none;
 }

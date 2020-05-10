@@ -24,7 +24,9 @@ class App extends Component {
       date: '',
       duration: 0,
       userTime:[],
-      showForm: true
+      showForm: true,
+      showInfo: false
+
     }
   }
 
@@ -54,6 +56,12 @@ class App extends Component {
     })
   }
 
+  toggleInfo = () => {
+    console.log("toggleInfo")
+    this.setState({
+      showInfo: !this.state.showInfo
+    })
+  }
   handleSubmit = (event) => {
     event.preventDefault();
     this.toggleForm();
@@ -200,7 +208,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header
+          toggleClick={this.toggleInfo}
+          toggleInfo={this.state.showInfo}
+        />
         <section className="formSection" id="form">
           <div>   
         {this.state.showForm ?
