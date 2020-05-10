@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Moment from 'react-moment'
-import 'moment-timezone'
 
 // import components
-import Form from './Form';
-import UserSelection from './UserSelection';
-import Usertime from './Usertime';
+import Header from './components/Header/Header'
+import Form from './components/Form/Form';
+import Usertime from './components/UserTime/Usertime';
 
+import './styles/App.scss'
 
 // First, we get the date for the user of when they would like to run.
 // Then, we ask if they'd like to hit the sunrise or the sunset. 
@@ -26,6 +25,7 @@ class App extends Component {
       userTime:[],
       morningRun: '',
       nightRun: '',
+      showForm: true
     }
   }
 
@@ -48,9 +48,16 @@ class App extends Component {
     })
   }
 
+  // to remove and show form after selection
+  toggleForm = () => {
+    this.setState({
+      showForm: !this.state.showForm
+    })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.toggleForm();
     axios({
       url: `https://api.sunrise-sunset.org/json`,
       method: `GET`,
@@ -114,18 +121,15 @@ class App extends Component {
     const timeToConvert = [...formattedTime]
 
     if (timeToConvert[0] === 12) {
-      
       const newHour = timeToConvert[0] - 12
       const newTimeToConvert = timeToConvert.shift()
-      
       const formattedTimeAgain = timeToConvert.unshift(newHour)
-      
+
     } else {
       const sameHour = timeToConvert[0] - 0
     }
     //returns to the function in createRun
     return timeToConvert;
-
   }
 
   //this converts the sunset time to EST time
@@ -135,87 +139,89 @@ class App extends Component {
       return easternTime[3] - 4
     } else {
       return easternTime[3] + 20
-    } 
-    // we want to take out the value easternTime[3] and return it using splice or slice // google ways how to change a single value in an array 
+    }
   }
+
+  resetPage = () => {
+    window.location.reload()
+  }
+
   // creates user run
   createRun = () => {
-    // this is the value returned from timeConverter
+    // values returned from date converter
     const dateArray = this.dateConverter(this.state.date)
-    // console.log(dateArray)
-    // this the value returned from the sunriseTimeConverter
+
+    // values returned from sunrise and sunset time converter
     const sunriseTimeArray = this.sunriseTimeConverter()
-    // console.log(sunriseTimeArray)
-    // this is the value returned from the sunsetTimeConverter
     const sunsetTimeArray = this.sunsetTimeConverter()
-    // console.log(sunsetTimeArray)
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
     const sunsetDateArray = dateArray.concat(formattedSunsetArray)
     const sunriseDateArray = dateArray.concat(sunriseTimeArray);
 
-
     const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
     const convertedToSunriseEst = this.timeToEst(sunriseDateArray)
-    
-    // console.log({convertedToSunsetEst});
-    // console.log({convertedToSunriseEst});
 
     const sunsetDateArrayFinal = [...sunsetDateArray]
     sunsetDateArrayFinal[3] = convertedToSunsetEst;
-    // console.log({sunsetDateArrayFinal});
 
     const sunriseDateArrayFinal = [...sunriseDateArray]
     sunriseDateArrayFinal[3] = convertedToSunriseEst;
-    // console.log({sunriseDateArrayFinal});
 
     const sunsetDateObject = new Date(...sunsetDateArrayFinal);
-    console.log({sunsetDateObject})
 
     const sunriseDateObject = new Date(...sunriseDateArrayFinal)
-    console.log({sunriseDateObject})
     
     const runDuration = parseInt(this.state.duration);
 
-      // set variables for Sunset and Sunrise times
+    // set variables for Sunset and Sunrise times
     let morningRun = sunriseDateObject;
     morningRun.setMinutes(morningRun.getMinutes()-runDuration)
-    console.log(morningRun)
 
     let nightRun = sunsetDateObject;
     nightRun.setMinutes(nightRun.getMinutes()-runDuration)
-      
-    const userRun = this.state.beforeSunrise ? morningRun.toTimeString() : nightRun.toTimeString()
-    
-    
 
+    const morningRunString = morningRun.toTimeString()
 
-// mapping to the page // 
+    const nightRunString = nightRun.toTimeString()
+
+    const finalMorningString = morningRunString.slice(0,8)
+
+    const finalNightString = nightRunString.slice(0,8)
+
+    const userRun = this.state.beforeSunrise ? finalMorningString : finalNightString
+
+// setting state with new string
       this.setState({
         userTime: userRun
       })
-      
     }
 
   render() {
     return (
-      <main>
-        <h1>Fun Run</h1>
-        <Form 
-          handleSubmit={this.handleSubmit}
-          handleSunrise={this.handleSunrise}
-          handleDate={this.handleDate}
-          date={this.state.date}
-          handleDuration={this.handleDuration}
-          duration={this.state.duration}
-          beforeSunrise={this.state.beforeSunrise}
-          />
-          <UserSelection
-          userInput={this.userInput}
-        />
-        <Usertime userTime={this.state.userTime}/>
-      </main>
+      <div>
+        <Header />
+        <section className="formSection" id="form">
+          <div>   
+        {this.state.showForm ?
+          <Form 
+            handleSubmit={this.handleSubmit}
+            handleSunrise={this.handleSunrise}
+            handleDate={this.handleDate}
+            date={this.state.date}
+            handleDuration={this.handleDuration}
+            duration={this.state.duration}
+            beforeSunrise={this.state.beforeSunrise}
+            />
+              : <Usertime 
+              userTime={this.state.userTime}
+              resetPage={this.resetPage}
+              nightOrDay={this.state.beforeSunrise} />
+            }
+            </div>
+          </section>
+      </div>
     )
   }
 }

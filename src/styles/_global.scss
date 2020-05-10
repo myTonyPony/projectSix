@@ -1,0 +1,70 @@
+/* global settings */
+$red: #D66761;
+$green: #B8E070;
+$yellow: #FFFE93;
+$darkBlue: #7A918D;
+$lightBlue: #93B1A7;
+$white: #FAFAFA;
+$black: #373737;
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  padding: 10px 0;
+  font-size: 2.5rem;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: $white;
+  text-transform: capitalize;
+  transition:  all ease 0.4s;
+
+  &:hover,
+  &:focus {
+    background-color: rgb(160, 64, 58);
+    color: $yellow;
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+}
