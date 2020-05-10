@@ -285,7 +285,7 @@ img {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   text-decoration: none;
-  color: #FAFAFA;
+  color: #fafafa;
   text-transform: capitalize;
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
@@ -293,12 +293,16 @@ img {
 
 .btn:hover, .btn:focus {
   background-color: #a0403a;
-  color: #FFFE93;
+  color: #fffe93;
 }
 
 .btn:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+.hidden {
+  display: none;
 }
 
 header {
@@ -351,6 +355,16 @@ header {
           align-items: center;
 }
 
+.infoButton button {
+  background-color: transparent;
+  border: none;
+}
+
+.infoButton button i:hover,
+.infoButton button i:focus {
+  color: #b8e070;
+}
+
 .headerContent h1 {
   font-size: 10rem;
   font-weight: 900;
@@ -361,7 +375,7 @@ header {
 
 .fa-info-circle {
   font-size: 5rem;
-  color: #FAFAFA;
+  color: #fafafa;
   margin-bottom: 1px;
 }
 
@@ -380,9 +394,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #D66761;
-  color: #FAFAFA;
-  border: 2px solid #FAFAFA;
+  background-color: #d66761;
+  color: #fafafa;
+  border: 2px solid #fafafa;
 }
 
 .dropdown {
@@ -394,7 +408,7 @@ header {
   position: absolute;
   bottom: 110%;
   border-radius: 10px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   margin: 0 auto;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -409,10 +423,10 @@ header {
   padding: 5px 5px;
 }
 
-.dropdown:hover .dropdownContent,
-.dropdown:focus .dropdownContent {
+.dropdownContent,
+.dropdownContent {
   display: block;
-  border: 2px solid #D66761;
+  border: 2px solid #d66761;
   -webkit-transition: ease 0.6s;
   transition: ease 0.6s;
   background-color: #fffe93;
@@ -428,7 +442,7 @@ h3 {
   text-align: center;
   font-size: 5rem;
   margin-bottom: 40px;
-  color: #FAFAFA;
+  color: #fafafa;
   letter-spacing: 2px;
   text-shadow: 0 0 2px;
   padding-top: 40px;
@@ -450,7 +464,7 @@ form {
   width: 600px;
   margin: 0 auto 30px auto;
   color: #373737;
-  background-color: #93B1A7;
+  background-color: #93b1a7;
   border-radius: 20px;
   -webkit-box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -503,17 +517,17 @@ form input[type="date"] {
   font-size: 2rem;
   text-transform: uppercase;
   border: none;
-  border: 2px solid #D66761;
+  border: 2px solid #d66761;
   margin-left: 10px;
   margin-right: 10px;
   padding: 1rem;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #373737;
   border-radius: 10px;
 }
 
 form input[type="date"]:active, form input[type="date"]:focus {
-  border-color: #B8E070;
+  border-color: #b8e070;
 }
 
 form select {
@@ -521,14 +535,14 @@ form select {
   font-size: 2rem;
   width: 300px;
   padding: 10px;
-  border: 2px solid #D66761;
+  border: 2px solid #d66761;
   text-align: center;
   -moz-appearance: none;
   background: url("../../assets/noun_Arrow Down_91506.png");
   background-repeat: no-repeat;
   background-position: right 7px top 50%, 0 0;
   background-size: 30px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   margin: 0 auto;
   margin-bottom: 5%;
   color: #373737;
@@ -536,23 +550,23 @@ form select {
 }
 
 form select:active, form select:focus {
-  border-color: #B8E070;
+  border-color: #b8e070;
 }
 
 form button.submit {
   width: 230px;
   margin: 2% auto 0 auto;
-  border: 2px solid #FAFAFA;
+  border: 2px solid #fafafa;
   font-size: 3rem;
   padding: 15px 25px;
-  background-color: #D66761;
+  background-color: #d66761;
   text-decoration: none;
   text-align: center;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 form button.submit:hover, form button.submit:focus {
-  color: #FFFE93;
+  color: #fffe93;
   background-color: #a0403a;
 }
 
@@ -632,7 +646,7 @@ form p.select {
 }
 
 .reset:hover, .reset:focus {
-  color: #B8E070;
+  color: #b8e070;
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
@@ -640,7 +654,7 @@ form p.select {
 .reset:active {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  color: #FFFE93;
+  color: #fffe93;
 }
 
 @media (max-width: 1040px) {
@@ -652,7 +666,7 @@ form p.select {
 @media (max-width: 720px) {
   h3 {
     font-size: 4.5rem;
-    padding: 0 10px 0 10px;
+    padding: 40px 10px 0 10px;
   }
   form {
     width: 500px;

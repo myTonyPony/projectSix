@@ -24,7 +24,9 @@ class App extends Component {
       date: '',
       duration: 0,
       userTime:[],
-      showForm: true
+      showForm: true,
+      showInfo: false
+
     }
   }
 
@@ -57,7 +59,14 @@ class App extends Component {
     })
   }
 
+
   // Takes the users selections and uses them for the axios call to get thei results. 
+  toggleInfo = () => {
+    console.log("toggleInfo")
+    this.setState({
+      showInfo: !this.state.showInfo
+    })
+  }
   handleSubmit = (event) => {
     event.preventDefault();
     this.toggleForm();
@@ -210,7 +219,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header
+          toggleClick={this.toggleInfo}
+          toggleInfo={this.state.showInfo}
+        />
         <section className="formSection" id="form">
           <div>   
         {this.state.showForm ?
