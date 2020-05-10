@@ -57,6 +57,7 @@ class App extends Component {
   }
 
   toggleInfo = () => {
+    console.log("toggleInfo")
     this.setState({
       showInfo: !this.state.showInfo
     })
@@ -208,7 +209,7 @@ class App extends Component {
     return (
       <div>
         <Header
-          toggleInfo={this.state.showInfo}
+          toggleClick={this.toggleInfo}
         />
         <section className="formSection" id="form">
           <div>   
