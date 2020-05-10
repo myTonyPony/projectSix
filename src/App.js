@@ -28,6 +28,7 @@ class App extends Component {
     }
   }
 
+  // Stores selected twilight time selected by the user into state. Also converts the string values of 'true' and 'false' into booleans. 
   handleSunrise = (event) => {
     const beforeSunrise = event.target.value === 'true' ? true : false;
     this.setState({
@@ -35,25 +36,28 @@ class App extends Component {
     })
   }
 
+  // Stores date selected by the user into state.
   handleDate = (event) => {
     this.setState({
       date: event.target.value,
     })
   }
 
+  // Stores duration selected by the user into state. 
   handleDuration = (event) => {
     this.setState({
       duration: event.target.value,
     })
   }
 
-  // to remove and show form after selection
+  // Removes the form after the user twilights themselves. Makes it appear again after the user presses the beautiful refresh icon. 
   toggleForm = () => {
     this.setState({
       showForm: !this.state.showForm
     })
   }
 
+  // Takes the users selections and uses them for the axios call to get thei results. 
   handleSubmit = (event) => {
     event.preventDefault();
     this.toggleForm();
@@ -72,50 +76,49 @@ class App extends Component {
         this.setState({
           apiTimes: response.data.results
         },() => this.createRun() )
-        // anon function above delays createRun until api is finished
+        // Anonymous function above delays createRun until the API is finished. 
       });
   }
 
-  //split into three functions and pass the params to the createRun
+  // Converts user selected date into number values
   dateConverter = (date) => {
-  // converts user selected date into number values
     const dateString = date.split("-", 3)
-    //map to new array
+    // Map to new array
     return dateString.map((date) => {
       return parseInt(date)
     })
   }
-   // converts sunrise time
+   // Converts sunrise time
   sunriseTimeConverter = () => {
-    // converts the sunrise time from API - from string to number values
+    // Converts the sunrise time from API - from string to number values
     const sunriseStringOne = this.state.apiTimes.sunrise.split(':', 3)
     const seconds = sunriseStringOne[2].split(" ", 1)
     const sunriseStringThree = sunriseStringOne.pop()
-    // concat the two arrays together without AM/PM values
+    // Concats the two arrays together without AM/PM values
     const finalSunriseString = sunriseStringOne.concat(seconds)
-    // convert array into number values
+    // Converts array into number values
     const finalSunriseNumber = finalSunriseString.map((sRiseTimes) => {
       return parseInt(sRiseTimes)
     })
     return finalSunriseNumber
   }
 
-  // convert sunset time
+  // Convert sunset time
   sunsetTimeConverter = () => {
-    // coverts sunset time into number values
+    // Coverts sunset time into number values
     const sunsetStringOne = this.state.apiTimes.sunset.split(':', 3)
     const secondsTwo = sunsetStringOne[2].split(" ", 1)
     const sunsetStringThree = sunsetStringOne.pop()
-    // concat the two arrays together without AM/PM values
+    // Concats the two arrays together without AM/PM values
     const finalSunsetString = sunsetStringOne.concat(secondsTwo)
-    // convert array into number values
+    // Converts array into number values
     const finalSunsetNumber = finalSunsetString.map((sunsetTimes) => {
       return parseInt(sunsetTimes)
     })
     return finalSunsetNumber;
   }
 
-  // this converts the sunrise time to 24 hour time
+  // This converts the sunrise time into 24 hour time
   convertTimeFormat = (formattedTime) => {
     const timeToConvert = [...formattedTime]
 
@@ -127,11 +130,11 @@ class App extends Component {
     } else {
       const sameHour = timeToConvert[0] - 0
     }
-    //returns to the function in createRun
+    // Returns to the function in createRun
     return timeToConvert;
   }
 
-  //this converts the sunset time to EST time
+  // This converts the sunset time into EST time
   timeToEst = (easternTime) => {
     
     if (easternTime[3] >= 5) {
@@ -145,53 +148,60 @@ class App extends Component {
     window.location.reload()
   }
 
-  // creates user run
   createRun = () => {
-    // values returned from date converter
+    // Date values returned from date converter
     const dateArray = this.dateConverter(this.state.date)
 
-    // values returned from sunrise and sunset time converter
+    // Sunrise/sunset values returned from sunrise and sunset time converter
     const sunriseTimeArray = this.sunriseTimeConverter()
     const sunsetTimeArray = this.sunsetTimeConverter()
     
     const formattedSunsetArray = this.convertTimeFormat(sunsetTimeArray)
 
+    // Creating two arrays, the date+sunset array and the date+sunrise array
     const sunsetDateArray = dateArray.concat(formattedSunsetArray)
     const sunriseDateArray = dateArray.concat(sunriseTimeArray);
 
+    // Converting the sunsetDateArray and the sunriseDateArray into EST
     const convertedToSunsetEst = this.timeToEst(sunsetDateArray)
     const convertedToSunriseEst = this.timeToEst(sunriseDateArray)
 
+    // Converted the sunset date array into 24-hour time
     const sunsetDateArrayFinal = [...sunsetDateArray]
     sunsetDateArrayFinal[3] = convertedToSunsetEst;
 
+    // Converted the sunrise date array into 24-hour time
     const sunriseDateArrayFinal = [...sunriseDateArray]
     sunriseDateArrayFinal[3] = convertedToSunriseEst;
 
+    // Converted the sunsetDateArrayFinal into a new Date object using the spread operator. 
     const sunsetDateObject = new Date(...sunsetDateArrayFinal);
 
+     // Converted the sunriseDateArrayFinal into a new Date object using the spread operator. 
     const sunriseDateObject = new Date(...sunriseDateArrayFinal)
     
+    // Converted the run duration from a string to a number
     const runDuration = parseInt(this.state.duration);
 
-    // variables for Sunset and Sunrise times
+    // Defined variables for sunset and sunrise times and subtracted the users chosen run duration 
     let morningRun = sunriseDateObject;
     morningRun.setMinutes(morningRun.getMinutes()-runDuration)
 
     let nightRun = sunsetDateObject;
     nightRun.setMinutes(nightRun.getMinutes()-runDuration)
 
+    // Used the toTimeString method on the new Date object to isolate only the time in the object. 
     const morningRunString = morningRun.toTimeString()
-
     const nightRunString = nightRun.toTimeString()
 
+    // Sliced the extra shit off of the end of each of the time strings to display to the user. 
     const finalMorningString = morningRunString.slice(0,8)
-
     const finalNightString = nightRunString.slice(0,8)
 
+    // Set the user run to either the sunrise string or the sunset string, using a ternary operator. 
     const userRun = this.state.beforeSunrise ? finalMorningString : finalNightString
 
-// setting state with new string
+// Set the state with users selections. 
       this.setState({
         userTime: userRun
       })
