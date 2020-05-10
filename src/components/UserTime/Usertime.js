@@ -7,7 +7,7 @@ const Usertime = (props) => {
         <p className="resultsBlurb">{props.nightOrDay ? "Here is your morning run! Enjoy the sunrise." : "Here is your night run! Enjoy the sunset."}</p>
         <h3 className={props.nightOrDay ? "resultsMorning" : "resultsNight"}>{props.userTime}</h3>
         <button className="reset" onClick={props.resetPage}>
-          <i class="fas fa-sync-alt" aria-hidden="true" title="refresh page"></i>
+          <i className="fas fa-sync-alt" aria-hidden="true" title="refresh page"></i>
         </button>
       </div>
     </section>
